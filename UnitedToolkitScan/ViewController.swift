@@ -21,4 +21,5 @@ class BarCodeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+
 }

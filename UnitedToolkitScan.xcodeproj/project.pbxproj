@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840F5FF021629D3E003A6E14 /* CameraCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F5FEF21629D3E003A6E14 /* CameraCaptureController.swift */; };
+		840F5FF22162A078003A6E14 /* ToolkitCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840F5FF12162A078003A6E14 /* ToolkitCapture.storyboard */; };
 		8437BEC9215EA140000E615F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437BEC8215EA140000E615F /* AppDelegate.swift */; };
 		8437BECB215EA140000E615F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8437BECA215EA140000E615F /* art.scnassets */; };
 		8437BECD215EA140000E615F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437BECC215EA140000E615F /* ViewController.swift */; };
@@ -14,9 +16,13 @@
 		8437BED2215EA142000E615F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8437BED1215EA142000E615F /* Assets.xcassets */; };
 		8437BED5215EA142000E615F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8437BED3215EA142000E615F /* LaunchScreen.storyboard */; };
 		843CA1B0215EADC500B1A534 /* BarcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CA1AF215EADC500B1A534 /* BarcodeController.swift */; };
+		84402ADC21615CB100199E97 /* UserLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84402ADB21615CB100199E97 /* UserLoginController.swift */; };
+		84402AE02161642700199E97 /* NFCController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84402ADF2161642700199E97 /* NFCController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840F5FEF21629D3E003A6E14 /* CameraCaptureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureController.swift; sourceTree = "<group>"; };
+		840F5FF12162A078003A6E14 /* ToolkitCapture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToolkitCapture.storyboard; sourceTree = "<group>"; };
 		8437BEC5215EA140000E615F /* UnitedToolkitScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitedToolkitScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8437BEC8215EA140000E615F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8437BECA215EA140000E615F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -26,6 +32,9 @@
 		8437BED4215EA142000E615F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8437BED6215EA142000E615F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843CA1AF215EADC500B1A534 /* BarcodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeController.swift; sourceTree = "<group>"; };
+		84402ADB21615CB100199E97 /* UserLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginController.swift; sourceTree = "<group>"; };
+		84402ADF2161642700199E97 /* NFCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCController.swift; sourceTree = "<group>"; };
+		84402AE4216165C400199E97 /* UnitedToolkitScan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnitedToolkitScan.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +53,7 @@
 			children = (
 				8437BEC7215EA140000E615F /* UnitedToolkitScan */,
 				8437BEC6215EA140000E615F /* Products */,
+				84402AE1216165C400199E97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +68,9 @@
 		8437BEC7215EA140000E615F /* UnitedToolkitScan */ = {
 			isa = PBXGroup;
 			children = (
+				840F5FF12162A078003A6E14 /* ToolkitCapture.storyboard */,
+				840F5FEF21629D3E003A6E14 /* CameraCaptureController.swift */,
+				84402AE4216165C400199E97 /* UnitedToolkitScan.entitlements */,
 				8437BEC8215EA140000E615F /* AppDelegate.swift */,
 				8437BECA215EA140000E615F /* art.scnassets */,
 				8437BECC215EA140000E615F /* ViewController.swift */,
@@ -66,8 +79,17 @@
 				8437BED3215EA142000E615F /* LaunchScreen.storyboard */,
 				8437BED6215EA142000E615F /* Info.plist */,
 				843CA1AF215EADC500B1A534 /* BarcodeController.swift */,
+				84402ADB21615CB100199E97 /* UserLoginController.swift */,
+				84402ADF2161642700199E97 /* NFCController.swift */,
 			);
 			path = UnitedToolkitScan;
+			sourceTree = "<group>";
+		};
+		84402AE1216165C400199E97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,12 +118,20 @@
 		8437BEBD215EA140000E615F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					2,
+				);
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Team United Airlines";
 				TargetAttributes = {
 					8437BEC4215EA140000E615F = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -129,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8437BECB215EA140000E615F /* art.scnassets in Resources */,
+				840F5FF22162A078003A6E14 /* ToolkitCapture.storyboard in Resources */,
 				8437BED5215EA142000E615F /* LaunchScreen.storyboard in Resources */,
 				8437BED2215EA142000E615F /* Assets.xcassets in Resources */,
 				8437BED0215EA140000E615F /* Main.storyboard in Resources */,
@@ -142,7 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84402ADC21615CB100199E97 /* UserLoginController.swift in Sources */,
 				8437BECD215EA140000E615F /* ViewController.swift in Sources */,
+				84402AE02161642700199E97 /* NFCController.swift in Sources */,
+				840F5FF021629D3E003A6E14 /* CameraCaptureController.swift in Sources */,
 				8437BEC9215EA140000E615F /* AppDelegate.swift in Sources */,
 				843CA1B0215EADC500B1A534 /* BarcodeController.swift in Sources */,
 			);
