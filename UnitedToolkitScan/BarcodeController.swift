@@ -15,11 +15,12 @@ class BarcodeScanner: UIViewController {
     @IBOutlet weak var topbar: UIView!
     @IBOutlet weak var manEntry: UIButton!
     @IBOutlet weak var manEntryView: UIView!
+    @IBOutlet weak var scanToolkitHeader: UILabel!
     
     var captureSession = AVCaptureSession()
     
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    var qrCodeFrameView: UIView?
+    var barCodeFrameView: UIView?
     
     private let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
                                       AVMetadataObject.ObjectType.code39,
@@ -81,14 +82,14 @@ class BarcodeScanner: UIViewController {
         view.bringSubview(toFront: topbar)
         view.bringSubview(toFront: manEntryView)
         // Initialize QR Code Frame to highlight the QR code
-        qrCodeFrameView = UIView()
+        barCodeFrameView = UIView()
         
-        if let qrCodeFrameView = qrCodeFrameView {
-            qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-            qrCodeFrameView.layer.borderWidth = 1
+        if let barCodeFrameView = barCodeFrameView {
+            barCodeFrameView.layer.borderColor = UIColor.red.cgColor
+            barCodeFrameView.layer.borderWidth = 10
             //qrCodeFrameView.frame = barCodeObject.bounds;
-            view.addSubview(qrCodeFrameView)
-            view.bringSubview(toFront: qrCodeFrameView)
+            view.addSubview(barCodeFrameView)
+            view.bringSubview(toFront: barCodeFrameView)
         }
     }
     
@@ -99,18 +100,19 @@ class BarcodeScanner: UIViewController {
     
     // MARK: - Helper methods
     
-    func launchApp(decodedURL: String) {
+    func launchApp(decodedBarcode: String) {
         
         if presentedViewController != nil {
             return
         }
         
-        let alertPrompt = UIAlertController(title: "Barcode Detected", message: "Kit ID:  \(decodedURL)", preferredStyle: .actionSheet)
+        let alertPrompt = UIAlertController(title: "Barcode Detected", message: "Kit ID:  \(decodedBarcode)", preferredStyle: .actionSheet)
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             
-            if let url = URL(string: decodedURL) {
-                if UIApplication.shared.canOpenURL(url) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            // This is where we would send the captured barcode to the server
+            if let barcode = URL(string: decodedBarcode) {
+                if UIApplication.shared.canOpenURL(barcode) {
+                    UIApplication.shared.open(barcode, options: [:], completionHandler: nil)
                 }
             }
         })
@@ -130,8 +132,8 @@ extension BarcodeScanner: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects.count == 0 {
-            qrCodeFrameView?.frame = CGRect.zero
-            //messageLabel.text = "No Barcode Detected"
+            barCodeFrameView?.frame = CGRect.zero
+            scanToolkitHeader.text = "Scan Toolkit Barcode"
             return
         }
         
@@ -139,12 +141,13 @@ extension BarcodeScanner: AVCaptureMetadataOutputObjectsDelegate {
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         if supportedCodeTypes.contains(metadataObj.type) {
-            // If the found metadata is equal to the QR code metadata (or barcode) then update the status label's text and set the bounds
+            
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            qrCodeFrameView?.frame = barCodeObject!.bounds
+            barCodeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                launchApp(decodedURL: metadataObj.stringValue!)
+                scanToolkitHeader.text = metadataObj.stringValue
+                launchApp(decodedBarcode: metadataObj.stringValue!)
                 //messageLabel.text = metadataObj.stringValue
             }
         }

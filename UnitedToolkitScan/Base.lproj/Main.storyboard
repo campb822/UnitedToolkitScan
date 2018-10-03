@@ -36,7 +36,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next" textContentType="username"/>
                                 <connections>
                                     <action selector="username:" destination="VEW-SM-UI3" eventType="editingDidEnd" id="N52-Kg-NET"/>
                                 </connections>
@@ -46,7 +46,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <action selector="password:forEvent:" destination="VEW-SM-UI3" eventType="editingDidEnd" id="CLR-kh-96W"/>
                                 </connections>
@@ -183,6 +183,7 @@
                     <connections>
                         <outlet property="manEntry" destination="5d2-EY-onQ" id="jss-SQ-3yX"/>
                         <outlet property="manEntryView" destination="3ac-Yq-ck1" id="Lva-KZ-drN"/>
+                        <outlet property="scanToolkitHeader" destination="KSL-J4-Q8C" id="sHN-hN-RVf"/>
                         <outlet property="topbar" destination="m9b-9U-Y1v" id="tvu-hZ-XTn"/>
                     </connections>
                 </viewController>
@@ -280,45 +281,6 @@
             </objects>
             <point key="canvasLocation" x="1062" y="739"/>
         </scene>
-        <!--Camera Capture Controller-->
-        <scene sceneID="N1C-3T-4ep">
-            <objects>
-                <viewController id="K2z-PX-8la" customClass="CameraCaptureController" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NaV-EQ-WWX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Img-K4-zOn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpe-jL-PfR">
-                                        <rect key="frame" x="16" y="33" width="44" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="Back button"/>
-                                        <connections>
-                                            <segue destination="BV1-FR-VrT" kind="show" id="Fd2-km-avA"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Capture Toolkit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzc-1P-mYw">
-                                        <rect key="frame" x="126" y="35" width="163" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.36470588240000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="JOg-se-mgF"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JSs-nB-i5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1060.8695652173915" y="-34.239130434782609"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Back button" width="533" height="533"/>
@@ -328,7 +290,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0Ff-nP-dUj"/>
-        <segue reference="Fd2-km-avA"/>
-        <segue reference="JR8-JS-eb4"/>
+        <segue reference="sAQ-Ga-zBL"/>
     </inferredMetricsTieBreakers>
 </document>

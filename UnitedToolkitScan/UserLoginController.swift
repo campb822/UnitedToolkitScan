@@ -18,5 +18,17 @@ class UserLogin: UIViewController{
     @IBAction func loginButton(_ sender: UIButton) {
     }
     
+//    func nextButton(_ textField: UITextField) -> Bool {
+//        let nextTag = textField.tag + 1
+//        let nextResp = textField.superview?.viewWithTag(nextTag) as UIResponder!
+//
+//        if nextResp != nil {
+//            nextResp?.becomeFirstResponder()
+//        }
+//        else{
+//            textField.resignFirstResponder()
+//        }
+//        return false
+//    }
 
 }
