@@ -110,11 +110,15 @@ class BarcodeScanner: UIViewController {
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             
             // This is where we would send the captured barcode to the server
-            if let barcode = URL(string: decodedBarcode) {
-                if UIApplication.shared.canOpenURL(barcode) {
-                    UIApplication.shared.open(barcode, options: [:], completionHandler: nil)
-                }
-            }
+            //if let barcode = URL(string: decodedBarcode) {
+           //     if UIApplication.shared.canOpenURL(barcode) {
+             //       UIApplication.shared.open(barcode, options: [:], completionHandler: nil)
+             //   }
+           // }
+            
+            let storyboard = UIStoryboard(name: "ToolkitCapture", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "CameraCaptureController")
+            self.present(controller, animated: true, completion: nil)
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
