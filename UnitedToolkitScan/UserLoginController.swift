@@ -55,7 +55,7 @@ class UserLogin: UIViewController, UITextFieldDelegate{
         else{
             let params = ["username":username.text, "password":password.text] as! Dictionary<String, String>
             
-            var request = URLRequest(url: URL(string: "http://35.9.22.103/admin")!)
+            var request = URLRequest(url: URL(string: "http://35.9.22.103/accounts/login/")!)
             request.httpMethod = "POST"
             request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")

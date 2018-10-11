@@ -84,9 +84,9 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzu-IR-pQo">
-                                <rect key="frame" x="126" y="452" width="76" height="30"/>
+                                <rect key="frame" x="180" y="245" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="load toolkit"/>
+                                <state key="normal" title="Confirm"/>
                                 <connections>
                                     <segue destination="V65-Vg-85z" kind="show" id="Mwa-eO-stZ"/>
                                 </connections>
@@ -106,7 +106,7 @@
                 <viewControllerPlaceholder storyboardName="ToolkitCapture" id="V65-Vg-85z" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2L-fV-1bV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2095" y="139"/>
+            <point key="canvasLocation" x="2119" y="40"/>
         </scene>
     </scenes>
 </document>

@@ -39,7 +39,7 @@ class BarcodeScanner: UIViewController {
         super.viewDidLoad()
         
         // Get the back-facing camera for capturing videos
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
         guard let captureDevice = deviceDiscoverySession.devices.first else {
             print("Failed to get the camera device")
@@ -77,11 +77,9 @@ class BarcodeScanner: UIViewController {
         // Start video capture.
         captureSession.startRunning()
         
-        // Move the message label and top bar to the front
-        //view.bringSubview(toFront: messageLabel)
-        //view.bringSubviewToFront(topbar)
+
         view.bringSubviewToFront(manEntryView)
-        // Initialize QR Code Frame to highlight the QR code
+
         barCodeFrameView = UIView()
         
         if let barCodeFrameView = barCodeFrameView {
@@ -121,8 +119,8 @@ class BarcodeScanner: UIViewController {
                 print("cannot find view controller")
                 return
             }
-            //pushViewController(controller, animated: true)
-            self.present(controller, animated: true, completion: nil)
+            self.navigationController!.pushViewController(controller, animated: true)
+            //self.present(controller, animated: true, completion: nil)
             
             //let viewController:UIViewController = UIStoryboard(name: "ToolkitCapture.storyboard", bundle: nil).instantiateViewController(withIdentifier: "CameraCaptureController") as UIViewController
             // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
