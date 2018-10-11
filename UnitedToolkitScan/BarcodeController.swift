@@ -108,24 +108,25 @@ class BarcodeScanner: UIViewController {
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (action) -> Void in
             
             // This is where we would send the captured barcode to the server
-            //if let barcode = URL(string: decodedBarcode) {
-           //     if UIApplication.shared.canOpenURL(barcode) {
-             //       UIApplication.shared.open(barcode, options: [:], completionHandler: nil)
-             //   }
-           // }
+
+            if decodedBarcode == "ABC-abc-1234" {
+                let alert = UIAlertController(title: "ERROR", message: "Toolkit not found in database. Try again.", preferredStyle: .actionSheet)
+                let manEntryOption = UIAlertAction(title: "Manual Entry", style:UIAlertAction.Style.default, handler:{(action) -> Void in
+                    self.manEntry.sendActions(for: .touchUpInside)
+                })
+                let cancel = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil)
+                alert.addAction(manEntryOption)
+                alert.addAction(cancel)
+                self.present(alert, animated: true, completion: nil)
+            }
             
-            let storyboard = UIStoryboard(name: "CaptureToolkit", bundle: Bundle.main)
-            guard let controller = storyboard.instantiateViewController(withIdentifier: "CameraCaptureController") as? CameraCaptureController else{
+            let storyboard = UIStoryboard(name: "ToolkitCapture", bundle: Bundle.main)
+            guard let controller = storyboard.instantiateViewController(withIdentifier: "CaptureToolkitStoryboard") as? CameraCaptureController else{
                 print("cannot find view controller")
                 return
             }
             self.navigationController!.pushViewController(controller, animated: true)
-            //self.present(controller, animated: true, completion: nil)
-            
-            //let viewController:UIViewController = UIStoryboard(name: "ToolkitCapture.storyboard", bundle: nil).instantiateViewController(withIdentifier: "CameraCaptureController") as UIViewController
-            // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
-            
-            //self.present(viewController, animated: false, completion: nil)
+
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)

@@ -18,6 +18,9 @@
 		84402ADC21615CB100199E97 /* UserLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84402ADB21615CB100199E97 /* UserLoginController.swift */; };
 		84A4AE59216E55F6007E9F7E /* BarcodeCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE58216E55F6007E9F7E /* BarcodeCapture.storyboard */; };
 		84A4AE5B216E5B65007E9F7E /* CheckInCheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE5A216E5B65007E9F7E /* CheckInCheckOut.storyboard */; };
+		84A4AE5F216FDC07007E9F7E /* ExampleBarcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */; };
+		84A4AE61216FDE06007E9F7E /* SuccessOrFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4AE60216FDE06007E9F7E /* SuccessOrFailureViewController.swift */; };
+		84A4AE63216FDE1E007E9F7E /* SuccessOrFailure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE62216FDE1E007E9F7E /* SuccessOrFailure.storyboard */; };
 		BC0D7A53216EA82400A45185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0D7A52216EA82400A45185 /* ViewController.swift */; };
 		BC0D7A57216EA91700A45185 /* PreviewCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0D7A56216EA91700A45185 /* PreviewCameraViewController.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +40,9 @@
 		84402AE4216165C400199E97 /* UnitedToolkitScan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnitedToolkitScan.entitlements; sourceTree = "<group>"; };
 		84A4AE58216E55F6007E9F7E /* BarcodeCapture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BarcodeCapture.storyboard; sourceTree = "<group>"; };
 		84A4AE5A216E5B65007E9F7E /* CheckInCheckOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckInCheckOut.storyboard; sourceTree = "<group>"; };
+		84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleBarcode.storyboard; sourceTree = "<group>"; };
+		84A4AE60216FDE06007E9F7E /* SuccessOrFailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOrFailureViewController.swift; sourceTree = "<group>"; };
+		84A4AE62216FDE1E007E9F7E /* SuccessOrFailure.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessOrFailure.storyboard; sourceTree = "<group>"; };
 		BC0D7A52216EA82400A45185 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BC0D7A56216EA91700A45185 /* PreviewCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +78,10 @@
 		8437BEC7215EA140000E615F /* UnitedToolkitScan */ = {
 			isa = PBXGroup;
 			children = (
+				84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */,
 				840F5FF12162A078003A6E14 /* ToolkitCapture.storyboard */,
+				84A4AE60216FDE06007E9F7E /* SuccessOrFailureViewController.swift */,
+				84A4AE62216FDE1E007E9F7E /* SuccessOrFailure.storyboard */,
 				BC0D7A56216EA91700A45185 /* PreviewCameraViewController.swift */,
 				BC0D7A52216EA82400A45185 /* ViewController.swift */,
 				840F5FEF21629D3E003A6E14 /* CameraCaptureController.swift */,
@@ -169,9 +178,11 @@
 				840F5FF22162A078003A6E14 /* ToolkitCapture.storyboard in Resources */,
 				84A4AE5B216E5B65007E9F7E /* CheckInCheckOut.storyboard in Resources */,
 				8437BED5215EA142000E615F /* LaunchScreen.storyboard in Resources */,
+				84A4AE5F216FDC07007E9F7E /* ExampleBarcode.storyboard in Resources */,
 				8437BED2215EA142000E615F /* Assets.xcassets in Resources */,
 				84A4AE59216E55F6007E9F7E /* BarcodeCapture.storyboard in Resources */,
 				8437BED0215EA140000E615F /* Main.storyboard in Resources */,
+				84A4AE63216FDE1E007E9F7E /* SuccessOrFailure.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +198,7 @@
 				84402ADC21615CB100199E97 /* UserLoginController.swift in Sources */,
 				840F5FF021629D3E003A6E14 /* CameraCaptureController.swift in Sources */,
 				8437BEC9215EA140000E615F /* AppDelegate.swift in Sources */,
+				84A4AE61216FDE06007E9F7E /* SuccessOrFailureViewController.swift in Sources */,
 				843CA1B0215EADC500B1A534 /* BarcodeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +350,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.UnitedAirlines.UnitedToolkitScan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.UnitedAirlinesCapstone.UnitedToolkitScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -356,7 +368,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.UnitedAirlines.UnitedToolkitScan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.UnitedAirlinesCapstone.UnitedToolkitScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

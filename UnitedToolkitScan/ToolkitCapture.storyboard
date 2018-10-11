@@ -13,7 +13,7 @@
         <!--Capture Toolkit Image-->
         <scene sceneID="Mtu-AW-ruT">
             <objects>
-                <viewController title="Capture Toolkit Image" id="bN3-W6-v3D" customClass="CameraCaptureController" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CaptureToolkitStoryboard" title="Capture Toolkit Image" id="bN3-W6-v3D" customClass="CameraCaptureController" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XZ8-cM-C3x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,12 +49,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twI-R6-eZU">
                                 <rect key="frame" x="0.0" y="58" width="414" height="678"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMR-RK-y1B">
-                                <rect key="frame" x="0.0" y="58" width="414" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odd-YQ-K3b">
-                                <rect key="frame" x="321" y="69" width="78" height="39"/>
+                                <rect key="frame" x="114" y="677" width="187" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -64,18 +60,16 @@
                                 <connections>
                                     <action selector="submitPhoto:" destination="8FX-SX-r9e" eventType="touchUpInside" id="5Hw-P0-nyu"/>
                                     <action selector="submitPhoto:" destination="m4v-X8-M2x" eventType="touchUpInside" id="VbO-xd-g2f"/>
+                                    <segue destination="OjS-sC-BOx" kind="show" id="MlZ-c8-q4p"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xMR-RK-y1B" firstAttribute="leading" secondItem="X0M-Gx-D9Q" secondAttribute="leading" id="4Zk-Gg-rV8"/>
                             <constraint firstItem="twI-R6-eZU" firstAttribute="trailing" secondItem="X0M-Gx-D9Q" secondAttribute="trailing" id="DZ3-F3-UT0"/>
                             <constraint firstItem="twI-R6-eZU" firstAttribute="leading" secondItem="X0M-Gx-D9Q" secondAttribute="leading" id="DZq-Yi-GPf"/>
                             <constraint firstItem="twI-R6-eZU" firstAttribute="top" secondItem="O9g-Bc-UtN" secondAttribute="top" id="Jac-Wc-XxG"/>
                             <constraint firstItem="twI-R6-eZU" firstAttribute="bottom" secondItem="X0M-Gx-D9Q" secondAttribute="bottom" id="def-2d-iIn"/>
-                            <constraint firstItem="xMR-RK-y1B" firstAttribute="trailing" secondItem="X0M-Gx-D9Q" secondAttribute="trailing" id="pkp-th-3cV"/>
-                            <constraint firstItem="xMR-RK-y1B" firstAttribute="top" secondItem="O9g-Bc-UtN" secondAttribute="top" id="yQc-Z2-qpl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X0M-Gx-D9Q"/>
                     </view>
@@ -87,6 +81,14 @@
                 <exit id="m4v-X8-M2x" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="859.4202898550725" y="45.652173913043484"/>
+        </scene>
+        <!--SuccessOrFailure-->
+        <scene sceneID="k3N-lH-4xI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SuccessOrFailure" id="OjS-sC-BOx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sc2-Y9-F3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="46"/>
         </scene>
     </scenes>
     <resources>

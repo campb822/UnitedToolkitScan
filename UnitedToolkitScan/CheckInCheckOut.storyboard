@@ -68,18 +68,18 @@
                         <viewLayoutGuide key="safeArea" id="dcF-xJ-Vam"/>
                     </view>
                     <navigationItem key="navigationItem" title="Toolkit Verification System" id="buT-Tt-AaJ">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="rjP-J3-zoh">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" style="plain" id="rjP-J3-zoh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d7j-bA-BYk">
                                 <rect key="frame" x="20" y="4" width="68" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="kVB-ws-T0S" kind="show" id="aJW-MY-0g2"/>
                                 </connections>
                             </button>
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -127,9 +127,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Check in" width="384" height="384"/>
-        <image name="Check out" width="384" height="384"/>
-        <image name="United_logo" width="915.1199951171875" height="166.80000305175781"/>
+        <image name="Check in" width="512" height="512"/>
+        <image name="Check out" width="512" height="512"/>
+        <image name="United_logo" width="3813" height="695"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
