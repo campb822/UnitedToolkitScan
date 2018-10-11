@@ -1,9 +1,9 @@
 //
-//  QRScannerController.swift
-//  QRCodeReader
+//  BarcodeController.swift
+//  UnitedToolkitScan
 //
-//  Created by Simon Ng on 13/10/2016.
-//  Copyright © 2016 AppCoda. All rights reserved.
+//  Created by Team United Airlines on 10/1/18.
+//  Copyright © 2018 Team United Airlines. All rights reserved.
 //
 
 import UIKit
@@ -12,10 +12,10 @@ import AVFoundation
 class BarcodeScanner: UIViewController {
     
     //@IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var topbar: UIView!
+    //@IBOutlet weak var topbar: UIView!
     @IBOutlet weak var manEntry: UIButton!
     @IBOutlet weak var manEntryView: UIView!
-    @IBOutlet weak var scanToolkitHeader: UILabel!
+    //@IBOutlet weak var scanToolkitHeader: UILabel!
     
     var captureSession = AVCaptureSession()
     
@@ -79,8 +79,8 @@ class BarcodeScanner: UIViewController {
         
         // Move the message label and top bar to the front
         //view.bringSubview(toFront: messageLabel)
-        view.bringSubview(toFront: topbar)
-        view.bringSubview(toFront: manEntryView)
+        //view.bringSubviewToFront(topbar)
+        view.bringSubviewToFront(manEntryView)
         // Initialize QR Code Frame to highlight the QR code
         barCodeFrameView = UIView()
         
@@ -89,7 +89,7 @@ class BarcodeScanner: UIViewController {
             barCodeFrameView.layer.borderWidth = 10
             //qrCodeFrameView.frame = barCodeObject.bounds;
             view.addSubview(barCodeFrameView)
-            view.bringSubview(toFront: barCodeFrameView)
+            view.bringSubviewToFront(barCodeFrameView)
         }
     }
     
@@ -107,7 +107,7 @@ class BarcodeScanner: UIViewController {
         }
         
         let alertPrompt = UIAlertController(title: "Barcode Detected", message: "Kit ID:  \(decodedBarcode)", preferredStyle: .actionSheet)
-        let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: { (action) -> Void in
+        let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (action) -> Void in
             
             // This is where we would send the captured barcode to the server
             //if let barcode = URL(string: decodedBarcode) {
@@ -116,12 +116,21 @@ class BarcodeScanner: UIViewController {
              //   }
            // }
             
-            let storyboard = UIStoryboard(name: "ToolkitCapture", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "CameraCaptureController")
+            let storyboard = UIStoryboard(name: "CaptureToolkit", bundle: Bundle.main)
+            guard let controller = storyboard.instantiateViewController(withIdentifier: "CameraCaptureController") as? CameraCaptureController else{
+                print("cannot find view controller")
+                return
+            }
+            //pushViewController(controller, animated: true)
             self.present(controller, animated: true, completion: nil)
+            
+            //let viewController:UIViewController = UIStoryboard(name: "ToolkitCapture.storyboard", bundle: nil).instantiateViewController(withIdentifier: "CameraCaptureController") as UIViewController
+            // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
+            
+            //self.present(viewController, animated: false, completion: nil)
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
         
         alertPrompt.addAction(confirmAction)
         alertPrompt.addAction(cancelAction)
@@ -137,7 +146,7 @@ extension BarcodeScanner: AVCaptureMetadataOutputObjectsDelegate {
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects.count == 0 {
             barCodeFrameView?.frame = CGRect.zero
-            scanToolkitHeader.text = "Scan Toolkit Barcode"
+            //scanToolkitHeader.text = "Scan Toolkit Barcode"
             return
         }
         
@@ -150,7 +159,7 @@ extension BarcodeScanner: AVCaptureMetadataOutputObjectsDelegate {
             barCodeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                scanToolkitHeader.text = metadataObj.stringValue
+                //scanToolkitHeader.text = metadataObj.stringValue
                 launchApp(decodedBarcode: metadataObj.stringValue!)
                 //messageLabel.text = metadataObj.stringValue
             }

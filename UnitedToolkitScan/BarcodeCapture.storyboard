@@ -18,7 +18,7 @@
             </objects>
             <point key="canvasLocation" x="-358" y="498"/>
         </scene>
-        <!--Barcode Scanner-->
+        <!--Scan Toolkit Barcode-->
         <scene sceneID="TGj-qC-4ww">
             <objects>
                 <viewController id="EBJ-JO-BuW" customClass="BarcodeScanner" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,28 +26,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zF-Lb-HXu" userLabel="Topbar">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scan Toolkit Barcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lti-83-ucM">
-                                        <rect key="frame" x="94" y="26" width="226" height="51"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sj4-mn-Hob">
-                                        <rect key="frame" x="16" y="33" width="44" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="Back button"/>
-                                        <connections>
-                                            <segue destination="Dgh-eP-xbS" kind="show" id="gcj-mh-2qP"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.36470588240000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3S-Fq-aRt">
                                 <rect key="frame" x="0.0" y="688" width="414" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -71,33 +49,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Gex-Re-9u5"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Scan Toolkit Barcode" id="zeZ-AU-iBO">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="b5o-MW-9a8"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="manEntry" destination="Thz-vT-O5J" id="DWg-D9-suO"/>
                         <outlet property="manEntryView" destination="w3S-Fq-aRt" id="WBh-Dl-3SB"/>
-                        <outlet property="scanToolkitHeader" destination="lti-83-ucM" id="r90-uc-Wle"/>
-                        <outlet property="topbar" destination="7zF-Lb-HXu" id="qsK-LT-DxU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KzI-Fo-ZrP" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-357.97101449275362" y="39.945652173913047"/>
+            <point key="canvasLocation" x="549.27536231884062" y="39.945652173913047"/>
         </scene>
-        <!--View Controller-->
+        <!--Manual Entry-->
         <scene sceneID="9Qc-wV-Khw">
             <objects>
-                <viewController id="0xk-0N-cZT" sceneMemberID="viewController">
+                <viewController title="Manual Entry" id="0xk-0N-cZT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zvq-eR-PZz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbg-QE-B7v">
-                                <rect key="frame" x="16" y="33" width="44" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Back button"/>
-                                <connections>
-                                    <segue destination="EBJ-JO-BuW" kind="show" id="dW5-qQ-hvh"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Barcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GZ-0E-ht7">
                                 <rect key="frame" x="158" y="153" width="109" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -112,6 +83,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzu-IR-pQo">
+                                <rect key="frame" x="126" y="452" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="load toolkit"/>
+                                <connections>
+                                    <segue destination="V65-Vg-85z" kind="show" id="Mwa-eO-stZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Oh5-VB-nMn"/>
@@ -119,10 +98,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTd-OX-HiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="40"/>
+            <point key="canvasLocation" x="1468.1159420289857" y="39.945652173913047"/>
+        </scene>
+        <!--ToolkitCapture-->
+        <scene sceneID="MOs-KX-eTz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ToolkitCapture" id="V65-Vg-85z" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2L-fV-1bV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2095" y="139"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Back button" width="533" height="533"/>
-    </resources>
 </document>

@@ -10,47 +10,86 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Camera Capture Controller-->
+        <!--Capture Toolkit Image-->
         <scene sceneID="Mtu-AW-ruT">
             <objects>
-                <viewController id="bN3-W6-v3D" customClass="CameraCaptureController" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Capture Toolkit Image" id="bN3-W6-v3D" customClass="CameraCaptureController" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XZ8-cM-C3x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S8K-vD-Bty">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRk-DY-N7Y">
-                                        <rect key="frame" x="16" y="33" width="44" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="Back button"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Capture Toolkit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVz-bI-4jq">
-                                        <rect key="frame" x="126" y="33" width="163" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.36470588240000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GN-9z-EJb">
+                                <rect key="frame" x="167" y="636" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Camera Button"/>
+                                <connections>
+                                    <action selector="buttoncap:" destination="bN3-W6-v3D" eventType="touchUpInside" id="BC9-of-WbE"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="QNe-pP-SkK"/>
                     </view>
                     <connections>
-                        <outlet property="captureToolkitHeader" destination="S8K-vD-Bty" id="eom-qG-dWP"/>
+                        <segue destination="8FX-SX-r9e" kind="show" identifier="showPhotoSegue" id="hl6-WR-wnB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LH5-y6-zDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="46"/>
+            <point key="canvasLocation" x="82.608695652173921" y="45.652173913043484"/>
+        </scene>
+        <!--Captured Toolkit-->
+        <scene sceneID="4ct-oC-rRa">
+            <objects>
+                <viewController title="Captured Toolkit" id="8FX-SX-r9e" customClass="PreviewCameraViewController" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O9g-Bc-UtN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twI-R6-eZU">
+                                <rect key="frame" x="0.0" y="58" width="414" height="678"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMR-RK-y1B">
+                                <rect key="frame" x="0.0" y="58" width="414" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odd-YQ-K3b">
+                                <rect key="frame" x="321" y="69" width="78" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title=" Submit ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitPhoto:" destination="8FX-SX-r9e" eventType="touchUpInside" id="5Hw-P0-nyu"/>
+                                    <action selector="submitPhoto:" destination="m4v-X8-M2x" eventType="touchUpInside" id="VbO-xd-g2f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xMR-RK-y1B" firstAttribute="leading" secondItem="X0M-Gx-D9Q" secondAttribute="leading" id="4Zk-Gg-rV8"/>
+                            <constraint firstItem="twI-R6-eZU" firstAttribute="trailing" secondItem="X0M-Gx-D9Q" secondAttribute="trailing" id="DZ3-F3-UT0"/>
+                            <constraint firstItem="twI-R6-eZU" firstAttribute="leading" secondItem="X0M-Gx-D9Q" secondAttribute="leading" id="DZq-Yi-GPf"/>
+                            <constraint firstItem="twI-R6-eZU" firstAttribute="top" secondItem="O9g-Bc-UtN" secondAttribute="top" id="Jac-Wc-XxG"/>
+                            <constraint firstItem="twI-R6-eZU" firstAttribute="bottom" secondItem="X0M-Gx-D9Q" secondAttribute="bottom" id="def-2d-iIn"/>
+                            <constraint firstItem="xMR-RK-y1B" firstAttribute="trailing" secondItem="X0M-Gx-D9Q" secondAttribute="trailing" id="pkp-th-3cV"/>
+                            <constraint firstItem="xMR-RK-y1B" firstAttribute="top" secondItem="O9g-Bc-UtN" secondAttribute="top" id="yQc-Z2-qpl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X0M-Gx-D9Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="photo" destination="twI-R6-eZU" id="5Yr-vb-Ev6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U8c-xi-ecv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="m4v-X8-M2x" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="859.4202898550725" y="45.652173913043484"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Back button" width="533" height="533"/>
+        <image name="Camera Button" width="125" height="126"/>
     </resources>
 </document>
