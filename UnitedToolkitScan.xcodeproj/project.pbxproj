@@ -19,13 +19,16 @@
 		84A4AE59216E55F6007E9F7E /* BarcodeCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE58216E55F6007E9F7E /* BarcodeCapture.storyboard */; };
 		84A4AE5B216E5B65007E9F7E /* CheckInCheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE5A216E5B65007E9F7E /* CheckInCheckOut.storyboard */; };
 		84A4AE5F216FDC07007E9F7E /* ExampleBarcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */; };
-		84A4AE61216FDE06007E9F7E /* SuccessOrFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4AE60216FDE06007E9F7E /* SuccessOrFailureViewController.swift */; };
-		84A4AE63216FDE1E007E9F7E /* SuccessOrFailure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE62216FDE1E007E9F7E /* SuccessOrFailure.storyboard */; };
+		84A4AE61216FDE06007E9F7E /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4AE60216FDE06007E9F7E /* SuccessViewController.swift */; };
+		84A4AE63216FDE1E007E9F7E /* Success.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE62216FDE1E007E9F7E /* Success.storyboard */; };
+		84A4AE6521710DD6007E9F7E /* Failure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE6421710DD6007E9F7E /* Failure.storyboard */; };
+		8BC3C6B2E3BFF1AFC4B96B0C /* Pods_UnitedToolkitScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADB4A0F5BA33217287499CD /* Pods_UnitedToolkitScan.framework */; };
 		BC0D7A53216EA82400A45185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0D7A52216EA82400A45185 /* ViewController.swift */; };
 		BC0D7A57216EA91700A45185 /* PreviewCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0D7A56216EA91700A45185 /* PreviewCameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6ADB4A0F5BA33217287499CD /* Pods_UnitedToolkitScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitedToolkitScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840F5FEF21629D3E003A6E14 /* CameraCaptureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureController.swift; sourceTree = "<group>"; };
 		840F5FF12162A078003A6E14 /* ToolkitCapture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToolkitCapture.storyboard; sourceTree = "<group>"; };
 		8437BEC5215EA140000E615F /* UnitedToolkitScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitedToolkitScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,10 +44,13 @@
 		84A4AE58216E55F6007E9F7E /* BarcodeCapture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BarcodeCapture.storyboard; sourceTree = "<group>"; };
 		84A4AE5A216E5B65007E9F7E /* CheckInCheckOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckInCheckOut.storyboard; sourceTree = "<group>"; };
 		84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleBarcode.storyboard; sourceTree = "<group>"; };
-		84A4AE60216FDE06007E9F7E /* SuccessOrFailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOrFailureViewController.swift; sourceTree = "<group>"; };
-		84A4AE62216FDE1E007E9F7E /* SuccessOrFailure.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessOrFailure.storyboard; sourceTree = "<group>"; };
+		84A4AE60216FDE06007E9F7E /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		84A4AE62216FDE1E007E9F7E /* Success.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Success.storyboard; sourceTree = "<group>"; };
+		84A4AE6421710DD6007E9F7E /* Failure.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Failure.storyboard; sourceTree = "<group>"; };
 		BC0D7A52216EA82400A45185 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BC0D7A56216EA91700A45185 /* PreviewCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCameraViewController.swift; sourceTree = "<group>"; };
+		C0BF24F939B42D466A00E5AD /* Pods-UnitedToolkitScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitedToolkitScan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitedToolkitScan/Pods-UnitedToolkitScan.debug.xcconfig"; sourceTree = "<group>"; };
+		FA057A42AD26E0AC5A7320D0 /* Pods-UnitedToolkitScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitedToolkitScan.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitedToolkitScan/Pods-UnitedToolkitScan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC3C6B2E3BFF1AFC4B96B0C /* Pods_UnitedToolkitScan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +71,7 @@
 				8437BEC7215EA140000E615F /* UnitedToolkitScan */,
 				8437BEC6215EA140000E615F /* Products */,
 				84402AE1216165C400199E97 /* Frameworks */,
+				D7134746251D093EA131458C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,8 +88,9 @@
 			children = (
 				84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */,
 				840F5FF12162A078003A6E14 /* ToolkitCapture.storyboard */,
-				84A4AE60216FDE06007E9F7E /* SuccessOrFailureViewController.swift */,
-				84A4AE62216FDE1E007E9F7E /* SuccessOrFailure.storyboard */,
+				84A4AE60216FDE06007E9F7E /* SuccessViewController.swift */,
+				84A4AE62216FDE1E007E9F7E /* Success.storyboard */,
+				84A4AE6421710DD6007E9F7E /* Failure.storyboard */,
 				BC0D7A56216EA91700A45185 /* PreviewCameraViewController.swift */,
 				BC0D7A52216EA82400A45185 /* ViewController.swift */,
 				840F5FEF21629D3E003A6E14 /* CameraCaptureController.swift */,
@@ -94,8 +103,8 @@
 				8437BED3215EA142000E615F /* LaunchScreen.storyboard */,
 				8437BED6215EA142000E615F /* Info.plist */,
 				843CA1AF215EADC500B1A534 /* BarcodeController.swift */,
-				84402ADB21615CB100199E97 /* UserLoginController.swift */,
 				84A4AE58216E55F6007E9F7E /* BarcodeCapture.storyboard */,
+				84402ADB21615CB100199E97 /* UserLoginController.swift */,
 			);
 			path = UnitedToolkitScan;
 			sourceTree = "<group>";
@@ -103,8 +112,18 @@
 		84402AE1216165C400199E97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6ADB4A0F5BA33217287499CD /* Pods_UnitedToolkitScan.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7134746251D093EA131458C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0BF24F939B42D466A00E5AD /* Pods-UnitedToolkitScan.debug.xcconfig */,
+				FA057A42AD26E0AC5A7320D0 /* Pods-UnitedToolkitScan.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8437BED9215EA142000E615F /* Build configuration list for PBXNativeTarget "UnitedToolkitScan" */;
 			buildPhases = (
+				1A44DCDE63FD013F544AB652 /* [CP] Check Pods Manifest.lock */,
 				8437BEC1215EA140000E615F /* Sources */,
 				8437BEC2215EA140000E615F /* Frameworks */,
 				8437BEC3215EA140000E615F /* Resources */,
+				837C4D450D431D3F10EC69A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,14 +200,54 @@
 				84A4AE5B216E5B65007E9F7E /* CheckInCheckOut.storyboard in Resources */,
 				8437BED5215EA142000E615F /* LaunchScreen.storyboard in Resources */,
 				84A4AE5F216FDC07007E9F7E /* ExampleBarcode.storyboard in Resources */,
+				84A4AE6521710DD6007E9F7E /* Failure.storyboard in Resources */,
 				8437BED2215EA142000E615F /* Assets.xcassets in Resources */,
 				84A4AE59216E55F6007E9F7E /* BarcodeCapture.storyboard in Resources */,
 				8437BED0215EA140000E615F /* Main.storyboard in Resources */,
-				84A4AE63216FDE1E007E9F7E /* SuccessOrFailure.storyboard in Resources */,
+				84A4AE63216FDE1E007E9F7E /* Success.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A44DCDE63FD013F544AB652 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnitedToolkitScan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		837C4D450D431D3F10EC69A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UnitedToolkitScan/Pods-UnitedToolkitScan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnitedToolkitScan/Pods-UnitedToolkitScan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8437BEC1215EA140000E615F /* Sources */ = {
@@ -198,7 +259,7 @@
 				84402ADC21615CB100199E97 /* UserLoginController.swift in Sources */,
 				840F5FF021629D3E003A6E14 /* CameraCaptureController.swift in Sources */,
 				8437BEC9215EA140000E615F /* AppDelegate.swift in Sources */,
-				84A4AE61216FDE06007E9F7E /* SuccessOrFailureViewController.swift in Sources */,
+				84A4AE61216FDE06007E9F7E /* SuccessViewController.swift in Sources */,
 				843CA1B0215EADC500B1A534 /* BarcodeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +402,7 @@
 		};
 		8437BEDA215EA142000E615F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0BF24F939B42D466A00E5AD /* Pods-UnitedToolkitScan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -359,6 +421,7 @@
 		};
 		8437BEDB215EA142000E615F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA057A42AD26E0AC5A7320D0 /* Pods-UnitedToolkitScan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

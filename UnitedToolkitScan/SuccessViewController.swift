@@ -8,12 +8,10 @@
 
 import UIKit
 
-class SuccessOrFailureViewController: UIViewController {
+class SuccessViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 

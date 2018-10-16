@@ -18,6 +18,8 @@ class CameraCaptureController: UIViewController{
     var cameraPrevLayer: AVCaptureVideoPreviewLayer?
     var img: UIImage?
 
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,7 @@ class CameraCaptureController: UIViewController{
         setupPreview()
         startCapture()
     }
+    
     
     func setupCameraCaptureSession(){
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
@@ -85,6 +88,7 @@ class CameraCaptureController: UIViewController{
             prevViewController.img = self.img
         }
     }
+    
 }
 
 extension CameraCaptureController: AVCapturePhotoCaptureDelegate{

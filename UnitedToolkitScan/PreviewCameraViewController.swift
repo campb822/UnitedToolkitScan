@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PreviewCameraViewController: UIViewController {
 
@@ -16,15 +17,56 @@ class PreviewCameraViewController: UIViewController {
         dismiss(animated:true, completion:nil)
     }
     @IBAction func submitPhoto(_ sender: Any) {
+        //uploadImage()
     }
+//    let REST_UPLOAD_API_URL = "my url"
+//
+//    let headers = [
+//        "Authorization": "authToken"
+//    ]
+//
+//    let parameters: Parameters = [
+//        "name": "test", "description" : "Image test upload from iOS"
+//    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         photo.image = self.img
-
-        // Do any additional setup after loading the view.
+        
+        //let authTkn = "Token \(user_token)"
+        
+        
+        
+        
     }
     
+//    func uploadImage() {
+//        Alamofire.upload(
+//            multipartFormData: { multipartFormData in
+//                if let image = self.img {
+//                    let imageData = UIImageJPEGRepresentation(image, 0.8)
+//                    multipartFormData.append(imageData!, withName: "image", fileName: "photo.jpg", mimeType: "jpg/png")
+//                }
+//                for (key, value) in parameters {
+//                    if value is String || value is Int {
+//                        multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+//                    }
+//                }
+//        },
+//            to: REST_UPLOAD_API_URL,
+//            headers: headers,
+//            encodingCompletion: { encodingResult in
+//                switch encodingResult {
+//                case .success(let upload, _, _):
+//                    upload.responseJSON { response in
+//                        debugPrint(response)
+//
+//                    }
+//                case .failure(let encodingError):
+//                    print("encoding Error : \(encodingError)")
+//                }
+//        })
+//    }
 
     /*
     // MARK: - Navigation
