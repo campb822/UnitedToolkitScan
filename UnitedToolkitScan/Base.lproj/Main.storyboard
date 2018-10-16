@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ksx-wh-2JE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="teW-NC-bbB">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -49,7 +49,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="login:" destination="ksx-wh-2JE" eventType="touchUpInside" id="nvf-ic-80O"/>
-                                    <segue destination="QpR-iS-Gs5" kind="show" id="2Mm-7x-Sd4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toolkit Verification System" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS9-bf-SQo">
@@ -63,6 +62,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="D7T-ML-lZ9"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bgx-on-sqr"/>
                     <connections>
                         <outlet property="password" destination="jZc-qF-vR4" id="bvZ-AE-K7m"/>
                         <outlet property="username" destination="4Su-bz-XiU" id="Xsh-wm-b96"/>
@@ -70,18 +70,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QjT-3P-v9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1465.217391304348" y="658.69565217391312"/>
+            <point key="canvasLocation" x="-557.97101449275362" y="658.69565217391312"/>
         </scene>
-        <!--CheckInCheckOut-->
-        <scene sceneID="6gk-ar-1dW">
+        <!--Navigation Controller-->
+        <scene sceneID="Ai7-VZ-E8A">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CheckInOutToolkit" storyboardName="CheckInCheckOut" id="QpR-iS-Gs5" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ePA-9s-Fu4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="teW-NC-bbB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3hf-jn-Z6P">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.0" green="0.36470588240000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ksx-wh-2JE" kind="relationship" relationship="rootViewController" id="ruz-RT-kaJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G79-Nr-nNc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-662" y="659"/>
+            <point key="canvasLocation" x="-1465.217391304348" y="658.69565217391312"/>
         </scene>
     </scenes>
     <resources>
-        <image name="United_logo" width="915.1199951171875" height="166.80000305175781"/>
+        <image name="United_logo" width="3813" height="695"/>
     </resources>
 </document>

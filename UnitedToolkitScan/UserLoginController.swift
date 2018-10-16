@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import KeychainAccess
 
 class UserLogin: UIViewController, UITextFieldDelegate{
     
@@ -17,7 +18,9 @@ class UserLogin: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var password: UITextField!
     
-    
+    struct JSONResponse: Decodable{
+        let auth_token: String
+    }
     
     @IBAction func login(_ sender: UIButton) {
         loginButtonPressed()
@@ -26,9 +29,14 @@ class UserLogin: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true;
     }
 
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Show the navigation bar on other view controllers
+        self.navigationController?.isNavigationBarHidden = false;
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == username){
@@ -90,25 +98,57 @@ class UserLogin: UIViewController, UITextFieldDelegate{
             
 
             let parameters:[String: Any] = [
-                "username": "childsev@msu.edu",
-               "password": "djangopass"
+                "username": username.text!,
+                "password": password.text!
             ]
-            print(username.text!)
             
-            let url = "http://35.9.22.103/image_verifier/accounts/login-ios/"
-            let request = Alamofire.request(url, method:.post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+            
+            let url = "http://35.9.22.103/image_verifier/api/login/"
+            
+            let request = Alamofire.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
                 //debugPrint(response)
                 
                 //print("Request: \(String(describing: response.request))")
                 //print("Response: \(String(describing: response.response))")
                 
-                let statusCode = (response.response?.statusCode)!
-                
+//                let statusCode = (response.response?.statusCode)!
+//
                 switch response.result {
                 case .success:
-                    //print(response)
-                    print(statusCode)
-                    
+                    print("success")
+                    print(response.description)
+                    if(response.description == "SUCCESS: Get outta here")
+                    {
+                        let loginAlert = UIAlertController(title: "User Not Found", message: "User not found in system. Contact System Administrator.", preferredStyle: .alert)
+                        
+                        loginAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                        
+                        
+                        self.present(loginAlert, animated: true)
+                        print("you cannot login")
+                    }
+                    else{
+                        let jsonData = response.data
+                        let decoder = JSONDecoder()
+                        guard let decodedKey = try? decoder.decode(JSONResponse.self, from: jsonData!) else{
+                            print("error with auth key")
+                            return
+                        }
+                        
+                        let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
+                        keychain["auth_token"] = decodedKey.auth_token
+                        
+                        let storyboard = UIStoryboard(name: "CheckInCheckOut", bundle: Bundle.main)
+                        guard let controller = storyboard.instantiateViewController(withIdentifier: "CheckInCheckOutStoryboard") as? CheckInCheckOutViewController else{
+                            print("cannot find view controller")
+                            return
+                        }
+                        
+                        print(keychain["auth_token"])
+                        self.navigationController!.pushViewController(controller, animated: true)
+                    }
+                    //print(statusCode)
+
                 case .failure(let error):
                     print("error")
                     //print("error: ")
@@ -116,8 +156,8 @@ class UserLogin: UIViewController, UITextFieldDelegate{
                     //print("response: ")
                     //print(response)
                     //failure(0,"Error")
-                
-                    
+
+
                 }
             }
             //debugPrint(request)

@@ -16,6 +16,7 @@
 		8437BED5215EA142000E615F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8437BED3215EA142000E615F /* LaunchScreen.storyboard */; };
 		843CA1B0215EADC500B1A534 /* BarcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CA1AF215EADC500B1A534 /* BarcodeController.swift */; };
 		84402ADC21615CB100199E97 /* UserLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84402ADB21615CB100199E97 /* UserLoginController.swift */; };
+		8497EDCA217571A500CCBDE1 /* CheckInCheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497EDC9217571A500CCBDE1 /* CheckInCheckOutViewController.swift */; };
 		84A4AE59216E55F6007E9F7E /* BarcodeCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE58216E55F6007E9F7E /* BarcodeCapture.storyboard */; };
 		84A4AE5B216E5B65007E9F7E /* CheckInCheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE5A216E5B65007E9F7E /* CheckInCheckOut.storyboard */; };
 		84A4AE5F216FDC07007E9F7E /* ExampleBarcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */; };
@@ -41,6 +42,7 @@
 		843CA1AF215EADC500B1A534 /* BarcodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeController.swift; sourceTree = "<group>"; };
 		84402ADB21615CB100199E97 /* UserLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginController.swift; sourceTree = "<group>"; };
 		84402AE4216165C400199E97 /* UnitedToolkitScan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnitedToolkitScan.entitlements; sourceTree = "<group>"; };
+		8497EDC9217571A500CCBDE1 /* CheckInCheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInCheckOutViewController.swift; sourceTree = "<group>"; };
 		84A4AE58216E55F6007E9F7E /* BarcodeCapture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BarcodeCapture.storyboard; sourceTree = "<group>"; };
 		84A4AE5A216E5B65007E9F7E /* CheckInCheckOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckInCheckOut.storyboard; sourceTree = "<group>"; };
 		84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleBarcode.storyboard; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				8437BECA215EA140000E615F /* art.scnassets */,
 				8437BECE215EA140000E615F /* Main.storyboard */,
 				84A4AE5A216E5B65007E9F7E /* CheckInCheckOut.storyboard */,
+				8497EDC9217571A500CCBDE1 /* CheckInCheckOutViewController.swift */,
 				8437BED1215EA142000E615F /* Assets.xcassets */,
 				8437BED3215EA142000E615F /* LaunchScreen.storyboard */,
 				8437BED6215EA142000E615F /* Info.plist */,
@@ -237,10 +240,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UnitedToolkitScan/Pods-UnitedToolkitScan-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8497EDCA217571A500CCBDE1 /* CheckInCheckOutViewController.swift in Sources */,
 				BC0D7A57216EA91700A45185 /* PreviewCameraViewController.swift in Sources */,
 				BC0D7A53216EA82400A45185 /* ViewController.swift in Sources */,
 				84402ADC21615CB100199E97 /* UserLoginController.swift in Sources */,
