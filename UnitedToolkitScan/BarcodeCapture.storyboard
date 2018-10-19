@@ -64,7 +64,7 @@
         <!--Manual Entry-->
         <scene sceneID="9Qc-wV-Khw">
             <objects>
-                <viewController storyboardIdentifier="BarcodeStoryboard" title="Manual Entry" id="0xk-0N-cZT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BarcodeStoryboard" title="Manual Entry" id="0xk-0N-cZT" customClass="ManualEntryViewController" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zvq-eR-PZz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
                                 <rect key="frame" x="111" y="143" width="192" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Barcode" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sGB-ee-xIa">
@@ -89,6 +89,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Confirm"/>
                                 <connections>
+                                    <action selector="manEntryConfirm:" destination="0xk-0N-cZT" eventType="touchUpInside" id="hz7-cv-l5g"/>
                                     <segue destination="V65-Vg-85z" kind="show" id="Mwa-eO-stZ"/>
                                 </connections>
                             </button>
@@ -104,6 +105,9 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Oh5-VB-nMn"/>
                     </view>
+                    <connections>
+                        <outlet property="manEntryField" destination="sGB-ee-xIa" id="WLL-dr-Iy0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTd-OX-HiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

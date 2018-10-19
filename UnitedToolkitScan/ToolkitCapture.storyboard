@@ -52,15 +52,25 @@
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odd-YQ-K3b">
                                 <rect key="frame" x="114" y="677" width="187" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.36470588240000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title=" Submit ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.36470588240000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="submitPhoto:" destination="8FX-SX-r9e" eventType="touchUpInside" id="5Hw-P0-nyu"/>
                                     <action selector="submitPhoto:" destination="m4v-X8-M2x" eventType="touchUpInside" id="VbO-xd-g2f"/>
-                                    <segue destination="HRt-rq-1z3" kind="show" id="PSt-li-Tbi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,74 +91,6 @@
                 <exit id="m4v-X8-M2x" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="859.4202898550725" y="45.652173913043484"/>
-        </scene>
-        <!--Processing-->
-        <scene sceneID="k5Z-6W-8iW">
-            <objects>
-                <viewController title="Processing" id="HRt-rq-1z3" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="S6S-jD-sqq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rOW-QO-7zE">
-                                <rect key="frame" x="197" y="358" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oot-4Y-1CN">
-                                <rect key="frame" x="40" y="661" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Success"/>
-                                <connections>
-                                    <action selector="SuccessButton:forEvent:" destination="7Y9-xY-PIm" eventType="touchUpInside" id="zZV-y4-3vE"/>
-                                    <action selector="successButton:" destination="7Y9-xY-PIm" eventType="touchUpInside" id="0wz-gH-AKz"/>
-                                    <segue destination="hef-7o-LRf" kind="show" id="eJd-36-f0f"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRg-DI-Hi2">
-                                <rect key="frame" x="305" y="661" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Failure"/>
-                                <connections>
-                                    <action selector="FailureButton:forEvent:" destination="7Y9-xY-PIm" eventType="touchUpInside" id="hgK-BK-Sme"/>
-                                    <action selector="failureButton:" destination="7Y9-xY-PIm" eventType="touchUpInside" id="ReT-m1-UNl"/>
-                                    <segue destination="72y-GN-R7D" kind="show" id="w9j-M2-jY7"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please wait for image processing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSm-lB-Ocr">
-                                <rect key="frame" x="82" y="329" width="251" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="FDc-1X-EMr"/>
-                    </view>
-                    <connections>
-                        <outlet property="view" destination="S6S-jD-sqq" id="dMf-mA-bmS"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a0b-p6-PMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="7Y9-xY-PIm" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1841" y="46"/>
-        </scene>
-        <!--Success-->
-        <scene sceneID="iV6-6q-eUI">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Success" id="hef-7o-LRf" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YBK-ZB-VOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1660" y="486"/>
-        </scene>
-        <!--Failure-->
-        <scene sceneID="b0L-ue-boc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Failure" id="72y-GN-R7D" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Plv-eQ-YfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2020" y="486"/>
         </scene>
     </scenes>
     <resources>

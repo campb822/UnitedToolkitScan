@@ -8,14 +8,15 @@
 
 import UIKit
 import AVFoundation
+import KeychainAccess
 
 class BarcodeScanner: UIViewController {
     
-    //@IBOutlet weak var messageLabel: UILabel!
-    //@IBOutlet weak var topbar: UIView!
+
     @IBOutlet weak var manEntry: UIButton!
     @IBOutlet weak var manEntryView: UIView!
-    //@IBOutlet weak var scanToolkitHeader: UILabel!
+    
+
     
     var captureSession = AVCaptureSession()
     
@@ -63,7 +64,6 @@ class BarcodeScanner: UIViewController {
             //            captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
             
         } catch {
-            // If any error occurs, simply print it out and don't continue any more.
             print(error)
             return
         }
@@ -109,6 +109,11 @@ class BarcodeScanner: UIViewController {
             
             // This is where we would send the captured barcode to the server
 
+            let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
+            let token = try? keychain.get("auth_token")
+            print(token!!)
+
+            
             if decodedBarcode == "ABC-abc-1234" {
                 let alert = UIAlertController(title: "ERROR", message: "Toolkit not found in database. Try again.", preferredStyle: .actionSheet)
                 let manEntryOption = UIAlertAction(title: "Manual Entry", style:UIAlertAction.Style.default, handler:{(action) -> Void in

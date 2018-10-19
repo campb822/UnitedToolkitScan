@@ -62,40 +62,6 @@ class UserLogin: UIViewController, UITextFieldDelegate{
         }
         
         else{
-//            let params = ["username":username.text, "password":password.text] as! Dictionary<String, String>
-//
-//            var request = URLRequest(url: URL(string: "http://35.9.22.103/image_verifier/accounts/login-ios/")!)
-//            request.httpMethod = "POST"
-//            request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
-//            request.addValue("text/html", forHTTPHeaderField: "Content-Type")
-//            request.addValue(username.text!, forHTTPHeaderField: "username")
-//            request.addValue(password.text!, forHTTPHeaderField: "password")
-//            request.allHTTPHeaderFields = params
-//            print("request: ")
-//            print(request, "\n")
-//            print(username.text!)
-//            print(request.httpBody as Any)
-//            let session = URLSession.shared
-//            let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-//                print(response!)
-//                do {
-//                    let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
-//                    print(json)
-//
-//                } catch {
-//                    print("error with database communication")
-//                }
-//            })
-//
-//            task.resume()
-            
-//            let headers: HTTPHeaders = [
-//                "Content-Type": "text/html",
-////                "csrftoken": "g27nuaAgrYyoqKUP66MjkI4BGswAfWJ3eRvHPrugFBZsL7Ur3XIOOpOtUeWN39bu",
-//                "username" : "childsev@msu.edu",
-//                "password" : "djangopass"
-//            ]
-            
 
             let parameters:[String: Any] = [
                 "username": username.text!,
@@ -104,15 +70,7 @@ class UserLogin: UIViewController, UITextFieldDelegate{
             
             
             let url = "http://35.9.22.103/image_verifier/api/login/"
-            
             let request = Alamofire.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
-                //debugPrint(response)
-                
-                //print("Request: \(String(describing: response.request))")
-                //print("Response: \(String(describing: response.response))")
-                
-//                let statusCode = (response.response?.statusCode)!
-//
                 switch response.result {
                 case .success:
                     print("success")
@@ -138,29 +96,22 @@ class UserLogin: UIViewController, UITextFieldDelegate{
                         let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
                         keychain["auth_token"] = decodedKey.auth_token
                         
+                        
                         let storyboard = UIStoryboard(name: "CheckInCheckOut", bundle: Bundle.main)
                         guard let controller = storyboard.instantiateViewController(withIdentifier: "CheckInCheckOutStoryboard") as? CheckInCheckOutViewController else{
                             print("cannot find view controller")
                             return
                         }
                         
-                        print(keychain["auth_token"])
+                        print(keychain["auth_token"] ?? "")
                         self.navigationController!.pushViewController(controller, animated: true)
                     }
-                    //print(statusCode)
 
                 case .failure(let error):
                     print("error")
-                    //print("error: ")
                     print(error)
-                    //print("response: ")
-                    //print(response)
-                    //failure(0,"Error")
-
-
                 }
             }
-            //debugPrint(request)
         }
     }
 }
