@@ -18,8 +18,6 @@ class PreviewCameraViewController: UIViewController {
     var imgFromServerData: Data!
     @IBOutlet weak var photo: UIImageView!
 
-    //@IBOutlet weak var imageFromServer: UIImageView!
-    //var imgFromServer: UIImage!
     @IBAction func submitPhoto(_ sender: Any) {
         uploadImage()
     }
@@ -79,14 +77,7 @@ class PreviewCameraViewController: UIViewController {
                     upload.responseJSON { response in
                         
                         debugPrint(response)
-                        //let loadingView = LoadingViewController(nibName: "LoadingViewController", bundle:nil)
-                        
-                        //self.navigationController?.pushViewController(loadingView, animated: true)
-                        //loadingView.imgData = response.data!
                         controller.imgData = response.data!
-                        //self.performSegue(withIdentifier: "showLoadingSegue", sender: nil)
-                        //self.imageFromServer.image = UIImage(data: (response.data!))
-                        
                         self.navigationController!.pushViewController(controller, animated: true)
                         
                     }
