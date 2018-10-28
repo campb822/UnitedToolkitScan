@@ -10,4 +10,5 @@ target 'UnitedToolkitScan' do
   # Pods for UnitedToolkitScan
   pod ‘Alamofire’, ‘~> 4.7’
   pod 'KeychainAccess'
+  pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
 end
