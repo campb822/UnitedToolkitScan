@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		840F5FF021629D3E003A6E14 /* CameraCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F5FEF21629D3E003A6E14 /* CameraCaptureController.swift */; };
 		840F5FF22162A078003A6E14 /* ToolkitCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840F5FF12162A078003A6E14 /* ToolkitCapture.storyboard */; };
-		8437BECB215EA140000E615F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8437BECA215EA140000E615F /* art.scnassets */; };
 		8437BED0215EA140000E615F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8437BECE215EA140000E615F /* Main.storyboard */; };
 		8437BED5215EA142000E615F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8437BED3215EA142000E615F /* LaunchScreen.storyboard */; };
 		843CA1B0215EADC500B1A534 /* BarcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CA1AF215EADC500B1A534 /* BarcodeController.swift */; };
@@ -38,7 +37,6 @@
 		840F5FEF21629D3E003A6E14 /* CameraCaptureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureController.swift; sourceTree = "<group>"; };
 		840F5FF12162A078003A6E14 /* ToolkitCapture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToolkitCapture.storyboard; sourceTree = "<group>"; };
 		8437BEC5215EA140000E615F /* UnitedToolkitScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitedToolkitScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8437BECA215EA140000E615F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		8437BECF215EA140000E615F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8437BED4215EA142000E615F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8437BED6215EA142000E615F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				84A4AE70217A4E66007E9F7E /* Assets.xcassets */,
-				8437BECA215EA140000E615F /* art.scnassets */,
 				8437BED6215EA142000E615F /* Info.plist */,
 				84A4AE72217A4E94007E9F7E /* UnitedToolkitScan.entitlements */,
 				BC0D7A52216EA82400A45185 /* ViewController.swift */,
@@ -213,7 +210,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8437BECB215EA140000E615F /* art.scnassets in Resources */,
 				840F5FF22162A078003A6E14 /* ToolkitCapture.storyboard in Resources */,
 				84A4AE78217A6B5B007E9F7E /* ImgProcessingLoading.storyboard in Resources */,
 				84A4AE5B216E5B65007E9F7E /* CheckInCheckOut.storyboard in Resources */,

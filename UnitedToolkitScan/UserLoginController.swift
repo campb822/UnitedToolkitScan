@@ -89,6 +89,9 @@ class UserLogin: UIViewController, UITextFieldDelegate{
                         let jsonData = response.data
                         let decoder = JSONDecoder()
                         guard let decodedKey = try? decoder.decode(JSONResponse.self, from: jsonData!) else{
+                            let errorAlert = UIAlertController(title: "ERROR", message: "Database Communication Error", preferredStyle:.alert)
+                            errorAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler:nil))
+                            self.present(errorAlert,animated: true)
                             print("error with auth key")
                             return
                         }

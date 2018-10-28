@@ -19,7 +19,6 @@ class BarcodeScanner: UIViewController {
 
     
     var captureSession = AVCaptureSession()
-    
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
     
@@ -50,13 +49,18 @@ class BarcodeScanner: UIViewController {
         do {
             // Get an instance of the AVCaptureDeviceInput class using the previous device object.
             let input = try AVCaptureDeviceInput(device: captureDevice)
-            
+            //let settings = AVCapturePhotoSettings()
             // Set the input device on the capture session.
             captureSession.addInput(input)
             
             // Initialize a AVCaptureMetadataOutput object and set it as the output device to the capture session.
             let captureMetadataOutput = AVCaptureMetadataOutput()
             captureSession.addOutput(captureMetadataOutput)
+//            if(captureDevice.hasTorch && captureDevice.isFlashAvailable){
+//                try captureDevice.lockForConfiguration()
+//                settings.flashMode = .on
+//                captureDevice.unlockForConfiguration()
+//            }
             
             // Set delegate and use the default dispatch queue to execute the call back
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
@@ -76,7 +80,6 @@ class BarcodeScanner: UIViewController {
         
         // Start video capture.
         captureSession.startRunning()
-        
 
         view.bringSubviewToFront(manEntryView)
 
