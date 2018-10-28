@@ -22,25 +22,16 @@ class BarcodeScanner: UIViewController {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
     
-    private let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
-                                      AVMetadataObject.ObjectType.code39,
-                                      AVMetadataObject.ObjectType.code39Mod43,
-                                      AVMetadataObject.ObjectType.code93,
-                                      AVMetadataObject.ObjectType.code128,
-                                      AVMetadataObject.ObjectType.ean8,
-                                      AVMetadataObject.ObjectType.ean13,
-                                      AVMetadataObject.ObjectType.aztec,
-                                      AVMetadataObject.ObjectType.pdf417,
-                                      AVMetadataObject.ObjectType.itf14,
-                                      AVMetadataObject.ObjectType.dataMatrix,
-                                      AVMetadataObject.ObjectType.interleaved2of5]
+    //United Toolkit barcodes only use code128, so it is the only barcode type detected
+    private let supportedCodeType = [AVMetadataObject.ObjectType.code128]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Get the back-facing camera for capturing videos
+        //Use rear facing camera to capture barcode
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
+        //If camera is unavailable, do not load
         guard let captureDevice = deviceDiscoverySession.devices.first else {
             print("Failed to get the camera device")
             return
@@ -49,23 +40,16 @@ class BarcodeScanner: UIViewController {
         do {
             // Get an instance of the AVCaptureDeviceInput class using the previous device object.
             let input = try AVCaptureDeviceInput(device: captureDevice)
-            //let settings = AVCapturePhotoSettings()
             // Set the input device on the capture session.
             captureSession.addInput(input)
             
             // Initialize a AVCaptureMetadataOutput object and set it as the output device to the capture session.
             let captureMetadataOutput = AVCaptureMetadataOutput()
             captureSession.addOutput(captureMetadataOutput)
-//            if(captureDevice.hasTorch && captureDevice.isFlashAvailable){
-//                try captureDevice.lockForConfiguration()
-//                settings.flashMode = .on
-//                captureDevice.unlockForConfiguration()
-//            }
             
             // Set delegate and use the default dispatch queue to execute the call back
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
-            //            captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+            captureMetadataOutput.metadataObjectTypes = supportedCodeType
             
         } catch {
             print(error)
@@ -88,7 +72,6 @@ class BarcodeScanner: UIViewController {
         if let barCodeFrameView = barCodeFrameView {
             barCodeFrameView.layer.borderColor = UIColor.red.cgColor
             barCodeFrameView.layer.borderWidth = 10
-            //qrCodeFrameView.frame = barCodeObject.bounds;
             view.addSubview(barCodeFrameView)
             view.bringSubviewToFront(barCodeFrameView)
         }
@@ -99,10 +82,8 @@ class BarcodeScanner: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Helper methods
-    
-    func launchApp(decodedBarcode: String) {
-        
+    func BarcodeDetected(decodedBarcode: String) {
+        let barcode = decodedBarcode
         if presentedViewController != nil {
             return
         }
@@ -111,12 +92,12 @@ class BarcodeScanner: UIViewController {
         let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (action) -> Void in
             
             // This is where we would send the captured barcode to the server
-
-            let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
-            let token = try? keychain.get("auth_token")
-            print(token!!)
-
+            let barcodeStatus = self.SendBarcodeToServer(decodedBarcode: barcode)
             
+            //if barcodeStatus is false... (will be changed)
+            if barcodeStatus == true{
+                print("found barcode")
+            }
             if decodedBarcode == "ABC-abc-1234" {
                 let alert = UIAlertController(title: "ERROR", message: "Toolkit not found in database. Try again.", preferredStyle: .actionSheet)
                 let manEntryOption = UIAlertAction(title: "Manual Entry", style:UIAlertAction.Style.default, handler:{(action) -> Void in
@@ -145,30 +126,35 @@ class BarcodeScanner: UIViewController {
         present(alertPrompt, animated: true, completion: nil)
     }
     
+    
+    func SendBarcodeToServer(decodedBarcode: String) -> Bool{
+        let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
+        let token = try? keychain.get("auth_token")
+        print(token!!)
+        
+        return true
+    }
 }
 
 extension BarcodeScanner: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        // Check if the metadataObjects array is not nil and it contains at least one object.
+        // Check if the metadataObjects array is not empty and it contains at least one object.
         if metadataObjects.count == 0 {
             barCodeFrameView?.frame = CGRect.zero
-            //scanToolkitHeader.text = "Scan Toolkit Barcode"
             return
         }
         
         // Get the metadata object.
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
-        if supportedCodeTypes.contains(metadataObj.type) {
+        if supportedCodeType.contains(metadataObj.type) {
             
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             barCodeFrameView?.frame = barCodeObject!.bounds
             
             if metadataObj.stringValue != nil {
-                //scanToolkitHeader.text = metadataObj.stringValue
-                launchApp(decodedBarcode: metadataObj.stringValue!)
-                //messageLabel.text = metadataObj.stringValue
+                BarcodeDetected(decodedBarcode: metadataObj.stringValue!)
             }
         }
     }

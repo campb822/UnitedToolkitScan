@@ -13,31 +13,39 @@ import KeychainAccess
 
 class UserLogin: UIViewController, UITextFieldDelegate{
     
-
+    //Text field for username and password
     @IBOutlet weak var username: UITextField!
-    
     @IBOutlet weak var password: UITextField!
     
+    @IBAction func adminPortal(_ sender: UIButton) {
+        if let url = URL(string: "http://35.9.22.103/admin") {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
+    //Decodable JSON for authentication token from Django server
     struct JSONResponse: Decodable{
         let auth_token: String
     }
     
+    //When login button is pressed, execute loginButtonPressedFunction below to send username and pass to server for auth
     @IBAction func login(_ sender: UIButton) {
         loginButtonPressed()
     }
     
-    
+    //Hide Navigation Controller on login page
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true;
     }
-
+    
+    //Enable Navigation Controller after done with login
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Show the navigation bar on other view controllers
         self.navigationController?.isNavigationBarHidden = false;
     }
     
+    //Enables next button within iOS keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == username){
             username.resignFirstResponder()
@@ -51,7 +59,9 @@ class UserLogin: UIViewController, UITextFieldDelegate{
         return true
     }
     
+    //Handoff login credentials to Django server with Alamofire
     func loginButtonPressed(){
+        //Does not try to login if user forgets to input username or password
         if(username.text == "" || password.text == ""){
             let alert = UIAlertController(title: "Missing Login Information", message: "A username or password was not entered. Please try again.", preferredStyle: .alert)
             
@@ -62,13 +72,13 @@ class UserLogin: UIViewController, UITextFieldDelegate{
         }
         
         else{
-
+            //Grab the username and password strings from textboxes
             let parameters:[String: Any] = [
                 "username": username.text!,
                 "password": password.text!
             ]
             
-            
+            //Alamofire passes credentials to url to verify the user exists and will login if possible. Saves auth token to be used by keychain access.
             let url = "http://35.9.22.103/image_verifier/api/login/"
             let request = Alamofire.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
                 switch response.result {
