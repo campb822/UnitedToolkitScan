@@ -22,8 +22,11 @@ class PreviewCameraViewController: UIViewController {
         uploadImage()
     }
     let REST_UPLOAD_API_URL = "http://35.9.22.103/image_verifier/api/process_kit_image/"
+    let REST_RETRIEVE_IMAGE_URL = "http://35.9.22.103/image_verifier/api/retrieve_processed_image/"
 
-
+    struct ImageJSONResponse: Decodable{
+        let auth_token: String
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         photo.image = self.img
@@ -52,7 +55,8 @@ class PreviewCameraViewController: UIViewController {
         ]
         let parameters: Parameters = [
             "name": "test",
-            "description" : "Image test upload from app"
+            "description" : "Image test upload from app",
+            "barcode_text" : 9567754
         ]
         
         Alamofire.upload(
@@ -75,16 +79,50 @@ class PreviewCameraViewController: UIViewController {
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseJSON { response in
+                        print("response: ")
+                        print(response)
                         
-                        debugPrint(response)
-                        controller.imgData = response.data!
-                        self.navigationController!.pushViewController(controller, animated: true)
+                        self.getDataFromServer(DataResponse: response)
+                        //controller.imgData = response.data!
+                        //self.navigationController!.pushViewController(controller, animated: true)
                         
                     }
                 case .failure(let encodingError):
                     print("encoding Error : \(encodingError)")
                 }
         })
+    }
+    
+    func getDataFromServer(DataResponse: Any){
+        
+        let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
+        let token = try? keychain.get("auth_token")
+        print(token!!)
+        
+
+        let parameters:[String: Any] = [
+            "Authorization" : "Token " + token!!,
+            "result_id": DataResponse
+        ]
+        
+        let url = "http://35.9.22.103/image_verifier/api/retrieve_processed_image/"
+        let request = Alamofire.request(url, method:.get, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
+            switch response.result {
+            case .success:
+                print("response description: ")
+                print(response.description)
+                let jsonData = response.data
+                let decoder = JSONDecoder()
+                guard let decodedResponse = try? decoder.decode(ImageJSONResponse.self, from: jsonData!) else{
+                    return
+                }
+                print("decoded response: ")
+                print(decodedResponse)
+            case .failure(let error):
+                print("error: ")
+                print(error)
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
