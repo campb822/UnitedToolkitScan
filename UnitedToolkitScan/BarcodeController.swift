@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import KeychainAccess
+import Alamofire
 
 class BarcodeScanner: UIViewController {
     
@@ -21,6 +22,10 @@ class BarcodeScanner: UIViewController {
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
+    //Decodable JSON for authentication token from Django server
+    struct BarcodeJSONResponse: Decodable{
+        let auth_token: String
+    }
     
     //United Toolkit barcodes only use code128, so it is the only barcode type detected
     private let supportedCodeType = [AVMetadataObject.ObjectType.code128]
@@ -95,10 +100,8 @@ class BarcodeScanner: UIViewController {
             let barcodeStatus = self.SendBarcodeToServer(decodedBarcode: barcode)
             
             //if barcodeStatus is false... (will be changed)
-            if barcodeStatus == true{
-                print("found barcode")
-            }
-            if decodedBarcode == "ABC-abc-1234" {
+            if (barcodeStatus == false) {
+                print("barcode not in DB")
                 let alert = UIAlertController(title: "ERROR", message: "Toolkit not found in database. Try again.", preferredStyle: .actionSheet)
                 let manEntryOption = UIAlertAction(title: "Manual Entry", style:UIAlertAction.Style.default, handler:{(action) -> Void in
                     self.manEntry.sendActions(for: .touchUpInside)
@@ -128,11 +131,54 @@ class BarcodeScanner: UIViewController {
     
     
     func SendBarcodeToServer(decodedBarcode: String) -> Bool{
+        var barcodeStatus = "not decoded"
         let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
         let token = try? keychain.get("auth_token")
         print(token!!)
         
-        return true
+        //Grab the username and password strings from textboxes
+        let parameters:[String: Any] = [
+            "auth_token": token!!,
+            "barcode": decodedBarcode
+        ]
+        
+        //Alamofire passes credentials to url to verify the existence of the barcode in the system
+        let url = "http://35.9.22.103/image_verifier/api/login/"
+        let request = Alamofire.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
+            switch response.result {
+            case .success:
+                print("success")
+                print(response.description)
+                if(response.description == "SUCCESS: Get outta here")
+                {
+                   barcodeStatus = "failure"
+                }
+                else{
+                    let jsonData = response.data
+                    let decoder = JSONDecoder()
+                    guard let decodedResponse = try? decoder.decode(BarcodeJSONResponse.self, from: jsonData!) else{
+                        barcodeStatus = "failure"
+                        return
+                    }
+                    print(decodedResponse)
+                    barcodeStatus = "success"
+                
+                }
+                
+            case .failure(let error):
+                print(error)
+                barcodeStatus = "failure"
+            }
+        }
+        if (barcodeStatus == "success"){
+            return true
+        }
+        else if (barcodeStatus == "failure"){
+            return false
+        }
+        else{
+            return false
+        }
     }
 }
 

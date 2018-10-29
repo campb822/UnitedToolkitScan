@@ -26,8 +26,24 @@
                                     <action selector="buttoncap:" destination="bN3-W6-v3D" eventType="touchUpInside" id="BC9-of-WbE"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bottom Left Cam" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-Xk-jra">
+                                <rect key="frame" x="20" y="551" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bottom Right Cam" translatesAutoresizingMaskIntoConstraints="NO" id="Kom-8t-VvN">
+                                <rect key="frame" x="314" y="551" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Top Left Cam" translatesAutoresizingMaskIntoConstraints="NO" id="yXy-rZ-7Np">
+                                <rect key="frame" x="20" y="85" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Top Right Cam" translatesAutoresizingMaskIntoConstraints="NO" id="dcq-yl-cN4">
+                                <rect key="frame" x="314" y="85" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QNe-pP-SkK"/>
                     </view>
                     <connections>
@@ -94,6 +110,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bottom Left Cam" width="200" height="200"/>
+        <image name="Bottom Right Cam" width="200" height="200"/>
         <image name="Camera Button" width="125" height="126"/>
+        <image name="Top Left Cam" width="200" height="200"/>
+        <image name="Top Right Cam" width="200" height="200"/>
     </resources>
 </document>
