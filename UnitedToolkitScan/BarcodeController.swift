@@ -24,7 +24,7 @@ class BarcodeScanner: UIViewController {
     var barCodeFrameView: UIView?
     //Decodable JSON for authentication token from Django server
     struct BarcodeJSONResponse: Decodable{
-        let auth_token: String
+        let expected_tool_count: Int
     }
     
     //United Toolkit barcodes only use code128, so it is the only barcode type detected
@@ -93,91 +93,63 @@ class BarcodeScanner: UIViewController {
             return
         }
         
-        let alertPrompt = UIAlertController(title: "Barcode Detected", message: "Kit ID:  \(decodedBarcode)", preferredStyle: .actionSheet)
-        let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (action) -> Void in
-            
-            // This is where we would send the captured barcode to the server
-            let barcodeStatus = self.SendBarcodeToServer(decodedBarcode: barcode)
-            
-            //if barcodeStatus is false... (will be changed)
-            if (barcodeStatus == false) {
-                print("barcode not in DB")
-                let alert = UIAlertController(title: "ERROR", message: "Toolkit not found in database. Try again.", preferredStyle: .actionSheet)
-                let manEntryOption = UIAlertAction(title: "Manual Entry", style:UIAlertAction.Style.default, handler:{(action) -> Void in
-                    self.manEntry.sendActions(for: .touchUpInside)
-                })
-                let cancel = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil)
-                alert.addAction(manEntryOption)
-                alert.addAction(cancel)
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-            let storyboard = UIStoryboard(name: "ToolkitCapture", bundle: Bundle.main)
-            guard let controller = storyboard.instantiateViewController(withIdentifier: "CaptureToolkitStoryboard") as? CameraCaptureController else{
-                print("cannot find view controller")
-                return
-            }
-            self.navigationController!.pushViewController(controller, animated: true)
+        if (decodedBarcode.count == 7){
+            let alertPrompt = UIAlertController(title: "Barcode Detected", message: "Kit ID:  \(decodedBarcode)", preferredStyle: .actionSheet)
+            let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (action) -> Void in
 
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
-        
-        alertPrompt.addAction(confirmAction)
-        alertPrompt.addAction(cancelAction)
-        
-        present(alertPrompt, animated: true, completion: nil)
+                self.SendBarcodeToServer(decodedBarcode: barcode)
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+            
+            alertPrompt.addAction(confirmAction)
+            alertPrompt.addAction(cancelAction)
+            
+            present(alertPrompt, animated: true, completion: nil)
+        }
     }
     
     
-    func SendBarcodeToServer(decodedBarcode: String) -> Bool{
-        var barcodeStatus = "not decoded"
+    func SendBarcodeToServer(decodedBarcode: String){
         let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
         let token = try? keychain.get("auth_token")
         print(token!!)
-        
-        //Grab the username and password strings from textboxes
+
         let parameters:[String: Any] = [
-            "auth_token": token!!,
-            "barcode": decodedBarcode
+            "Authorization" : "Token " + token!!,
+            "barcode_text": decodedBarcode
         ]
         
         //Alamofire passes credentials to url to verify the existence of the barcode in the system
-        let url = "http://35.9.22.103/image_verifier/api/login/"
+        let url = "http://35.9.22.103/image_verifier/api/barcode_validate/"
         let request = Alamofire.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
             switch response.result {
             case .success:
-                print("success")
-                print(response.description)
-                if(response.description == "SUCCESS: Get outta here")
-                {
-                   barcodeStatus = "failure"
+                let jsonData = response.data
+                let decoder = JSONDecoder()
+                guard let decodedResponse = try? decoder.decode(BarcodeJSONResponse.self, from: jsonData!) else{
+                    print("barcode not in DB")
+                    let alert = UIAlertController(title: "ERROR", message: "Toolkit not found in database. Try again.", preferredStyle: .actionSheet)
+                    let manEntryOption = UIAlertAction(title: "Manual Entry", style:UIAlertAction.Style.default, handler:{(action) -> Void in
+                        self.manEntry.sendActions(for: .touchUpInside)
+                    })
+                    let cancel = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil)
+                    alert.addAction(manEntryOption)
+                    alert.addAction(cancel)
+                    self.present(alert, animated: true, completion: nil)
+                    return
                 }
-                else{
-                    let jsonData = response.data
-                    let decoder = JSONDecoder()
-                    guard let decodedResponse = try? decoder.decode(BarcodeJSONResponse.self, from: jsonData!) else{
-                        barcodeStatus = "failure"
-                        return
-                    }
-                    print(decodedResponse)
-                    barcodeStatus = "success"
-                
+                print(decodedResponse.expected_tool_count)
+                let storyboard = UIStoryboard(name: "ToolkitCapture", bundle: Bundle.main)
+                guard let controller = storyboard.instantiateViewController(withIdentifier: "CaptureToolkitStoryboard") as? CameraCaptureController else{
+                    print("cannot find view controller")
+                    return
                 }
+                self.navigationController!.pushViewController(controller, animated: true)
                 
             case .failure(let error):
                 print(error)
-                barcodeStatus = "failure"
             }
-        }
-        if (barcodeStatus == "success"){
-            return true
-        }
-        else if (barcodeStatus == "failure"){
-            return false
-        }
-        else{
-            return false
         }
     }
 }

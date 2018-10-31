@@ -45,8 +45,16 @@
                                     <segue destination="Io5-df-irN" kind="show" id="zfs-7U-8zn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3P1-WI-f3T">
+                                <rect key="frame" x="364" y="68" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="information"/>
+                                <connections>
+                                    <segue destination="8qM-Lw-f5A" kind="show" id="IZ0-gb-4gu"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdb-8m-Ob5">
-                                <rect key="frame" x="105" y="631" width="206" height="39"/>
+                                <rect key="frame" x="104" y="631" width="206" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.36470588240000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -65,15 +73,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="oNd-eR-LFr" kind="show" id="cHO-Uv-5gX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3P1-WI-f3T">
-                                <rect key="frame" x="364" y="68" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="information"/>
-                                <connections>
-                                    <segue destination="8qM-Lw-f5A" kind="show" id="IZ0-gb-4gu"/>
+                                    <action selector="ScanNewToolkitButton:" destination="Vxa-KK-jxV" eventType="touchUpInside" id="lZz-98-l0x"/>
+                                    <segue destination="IhV-gR-RxL" kind="show" id="1t0-KY-1G7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,12 +111,12 @@
             <point key="canvasLocation" x="3010.144927536232" y="42.391304347826093"/>
         </scene>
         <!--CheckInCheckOut-->
-        <scene sceneID="ffg-1q-Gki">
+        <scene sceneID="ddd-2L-zE1">
             <objects>
-                <viewControllerPlaceholder storyboardName="CheckInCheckOut" id="oNd-eR-LFr" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qdx-gz-6KV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="CheckInCheckOut" id="IhV-gR-RxL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="igQ-yL-red" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="490"/>
+            <point key="canvasLocation" x="1890" y="487"/>
         </scene>
         <!--ToolkitCapture-->
         <scene sceneID="FFh-Qk-tT1">
@@ -127,7 +128,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Example Skew" width="374.33334350585938" height="250.66667175292969"/>
-        <image name="information" width="512" height="512"/>
+        <image name="Example Skew" width="561" height="376"/>
+        <image name="information" width="170" height="170"/>
     </resources>
 </document>
