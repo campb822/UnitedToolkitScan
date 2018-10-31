@@ -22,6 +22,23 @@ class UserLogin: UIViewController, UITextFieldDelegate{
             UIApplication.shared.open(url, options: [:])
         }
     }
+    
+    public static let serverTrustPolicies: [String: ServerTrustPolicy] = [
+        "35.9.22.103": .pinCertificates(
+            certificates: ServerTrustPolicy.certificates(),
+            validateCertificateChain: false,
+            validateHost: false
+            
+        ),
+        "35.9.22.103/image_verifier/api/login/": .disableEvaluation
+    ]
+    
+    public static let sessionManager = Alamofire.SessionManager(
+        serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+        
+    )
+    
+    //var sessionManager: SessionManager?
     //Decodable JSON for authentication token from Django server
     struct JSONResponse: Decodable{
         let auth_token: String
@@ -79,8 +96,13 @@ class UserLogin: UIViewController, UITextFieldDelegate{
             ]
             
             //Alamofire passes credentials to url to verify the user exists and will login if possible. Saves auth token to be used by keychain access.
-            let url = "http://35.9.22.103/image_verifier/api/login/"
-            let request = Alamofire.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
+            
+            
+            
+            
+            let url = "https://35.9.22.103/image_verifier/api/login/"
+
+            _ = UserLogin.sessionManager.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
                 switch response.result {
                 case .success:
                     print("success")
