@@ -23,20 +23,7 @@ class UserLogin: UIViewController, UITextFieldDelegate{
         }
     }
     
-    public static let serverTrustPolicies: [String: ServerTrustPolicy] = [
-        "35.9.22.103": .pinCertificates(
-            certificates: ServerTrustPolicy.certificates(),
-            validateCertificateChain: false,
-            validateHost: false
-            
-        ),
-        "35.9.22.103/image_verifier/api/login/": .disableEvaluation
-    ]
     
-    public static let sessionManager = Alamofire.SessionManager(
-        serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
-        
-    )
     
     //var sessionManager: SessionManager?
     //Decodable JSON for authentication token from Django server
@@ -52,6 +39,7 @@ class UserLogin: UIViewController, UITextFieldDelegate{
     //Hide Navigation Controller on login page
     override func viewDidLoad() {
         super.viewDidLoad()
+        //loadSession()
         self.navigationController?.isNavigationBarHidden = true;
     }
     
@@ -97,12 +85,10 @@ class UserLogin: UIViewController, UITextFieldDelegate{
             
             //Alamofire passes credentials to url to verify the user exists and will login if possible. Saves auth token to be used by keychain access.
             
-            
-            
-            
             let url = "https://35.9.22.103/image_verifier/api/login/"
-
-            _ = UserLogin.sessionManager.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
+            let tempSession = loadSession()
+            let tempManager = tempSession.shared.getManager().manager
+            _ = loadSession.manager.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
                 switch response.result {
                 case .success:
                     print("success")
@@ -148,5 +134,26 @@ class UserLogin: UIViewController, UITextFieldDelegate{
                 }
             }
         }
+    }
+}
+
+class loadSession {
+    var manager : SessionManager?
+    static let shared = loadSession()
+    init(){}
+    func getManager(){
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            "35.9.22.103": .pinCertificates(
+                certificates: ServerTrustPolicy.certificates(),
+                validateCertificateChain: false,
+                validateHost: false
+                
+            ),
+            "35.9.22.103/image_verifier/api/login/": .disableEvaluation
+        ]
+        
+        manager = Alamofire.SessionManager(
+            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+        )
     }
 }
