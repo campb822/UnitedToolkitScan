@@ -13,13 +13,11 @@
 		8437BED5215EA142000E615F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8437BED3215EA142000E615F /* LaunchScreen.storyboard */; };
 		843CA1B0215EADC500B1A534 /* BarcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CA1AF215EADC500B1A534 /* BarcodeController.swift */; };
 		84402ADC21615CB100199E97 /* UserLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84402ADB21615CB100199E97 /* UserLoginController.swift */; };
+		84830F72218B8E6000769517 /* AlamofireSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F71218B8E6000769517 /* AlamofireSessionManager.swift */; };
 		8497EDCA217571A500CCBDE1 /* CheckInCheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497EDC9217571A500CCBDE1 /* CheckInCheckOutViewController.swift */; };
 		84A4AE59216E55F6007E9F7E /* BarcodeCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE58216E55F6007E9F7E /* BarcodeCapture.storyboard */; };
 		84A4AE5B216E5B65007E9F7E /* CheckInCheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE5A216E5B65007E9F7E /* CheckInCheckOut.storyboard */; };
 		84A4AE5F216FDC07007E9F7E /* ExampleBarcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */; };
-		84A4AE61216FDE06007E9F7E /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4AE60216FDE06007E9F7E /* SuccessViewController.swift */; };
-		84A4AE63216FDE1E007E9F7E /* Success.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE62216FDE1E007E9F7E /* Success.storyboard */; };
-		84A4AE6521710DD6007E9F7E /* Failure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE6421710DD6007E9F7E /* Failure.storyboard */; };
 		84A4AE6921793CD4007E9F7E /* ManualEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4AE6821793CD4007E9F7E /* ManualEntryViewController.swift */; };
 		84A4AE6F21795479007E9F7E /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4AE6E21795479007E9F7E /* LoadingViewController.swift */; };
 		84A4AE71217A4E66007E9F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE70217A4E66007E9F7E /* Assets.xcassets */; };
@@ -42,13 +40,11 @@
 		8437BED6215EA142000E615F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843CA1AF215EADC500B1A534 /* BarcodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeController.swift; sourceTree = "<group>"; };
 		84402ADB21615CB100199E97 /* UserLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginController.swift; sourceTree = "<group>"; };
+		84830F71218B8E6000769517 /* AlamofireSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireSessionManager.swift; sourceTree = "<group>"; };
 		8497EDC9217571A500CCBDE1 /* CheckInCheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInCheckOutViewController.swift; sourceTree = "<group>"; };
 		84A4AE58216E55F6007E9F7E /* BarcodeCapture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BarcodeCapture.storyboard; sourceTree = "<group>"; };
 		84A4AE5A216E5B65007E9F7E /* CheckInCheckOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckInCheckOut.storyboard; sourceTree = "<group>"; };
 		84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExampleBarcode.storyboard; sourceTree = "<group>"; };
-		84A4AE60216FDE06007E9F7E /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
-		84A4AE62216FDE1E007E9F7E /* Success.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Success.storyboard; sourceTree = "<group>"; };
-		84A4AE6421710DD6007E9F7E /* Failure.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Failure.storyboard; sourceTree = "<group>"; };
 		84A4AE6821793CD4007E9F7E /* ManualEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualEntryViewController.swift; sourceTree = "<group>"; };
 		84A4AE6E21795479007E9F7E /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		84A4AE70217A4E66007E9F7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,9 +97,6 @@
 				84A4AE72217A4E94007E9F7E /* UnitedToolkitScan.entitlements */,
 				BC0D7A52216EA82400A45185 /* ViewController.swift */,
 				84A4AE73217A4EA1007E9F7E /* AppDelegate.swift */,
-				84A4AE60216FDE06007E9F7E /* SuccessViewController.swift */,
-				84A4AE62216FDE1E007E9F7E /* Success.storyboard */,
-				84A4AE6421710DD6007E9F7E /* Failure.storyboard */,
 				84A4AE75217A5851007E9F7E /* Loading.storyboard */,
 				84A4AE6E21795479007E9F7E /* LoadingViewController.swift */,
 				84A4AE77217A6B5B007E9F7E /* ImgProcessingLoading.storyboard */,
@@ -119,6 +112,7 @@
 				8497EDC9217571A500CCBDE1 /* CheckInCheckOutViewController.swift */,
 				8437BECE215EA140000E615F /* Main.storyboard */,
 				84402ADB21615CB100199E97 /* UserLoginController.swift */,
+				84830F71218B8E6000769517 /* AlamofireSessionManager.swift */,
 				8437BED3215EA142000E615F /* LaunchScreen.storyboard */,
 			);
 			path = UnitedToolkitScan;
@@ -217,10 +211,8 @@
 				8437BED5215EA142000E615F /* LaunchScreen.storyboard in Resources */,
 				84A4AE71217A4E66007E9F7E /* Assets.xcassets in Resources */,
 				84A4AE5F216FDC07007E9F7E /* ExampleBarcode.storyboard in Resources */,
-				84A4AE6521710DD6007E9F7E /* Failure.storyboard in Resources */,
 				84A4AE59216E55F6007E9F7E /* BarcodeCapture.storyboard in Resources */,
 				8437BED0215EA140000E615F /* Main.storyboard in Resources */,
-				84A4AE63216FDE1E007E9F7E /* Success.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84830F72218B8E6000769517 /* AlamofireSessionManager.swift in Sources */,
 				8497EDCA217571A500CCBDE1 /* CheckInCheckOutViewController.swift in Sources */,
 				BC0D7A57216EA91700A45185 /* PreviewCameraViewController.swift in Sources */,
 				BC0D7A53216EA82400A45185 /* ViewController.swift in Sources */,
@@ -282,7 +275,6 @@
 				840F5FF021629D3E003A6E14 /* CameraCaptureController.swift in Sources */,
 				84A4AE6921793CD4007E9F7E /* ManualEntryViewController.swift in Sources */,
 				84A4AE6F21795479007E9F7E /* LoadingViewController.swift in Sources */,
-				84A4AE61216FDE06007E9F7E /* SuccessViewController.swift in Sources */,
 				84A4AE74217A4EA2007E9F7E /* AppDelegate.swift in Sources */,
 				843CA1B0215EADC500B1A534 /* BarcodeController.swift in Sources */,
 			);

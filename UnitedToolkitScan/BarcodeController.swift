@@ -17,13 +17,15 @@ class BarcodeScanner: UIViewController {
     @IBOutlet weak var manEntry: UIButton!
     @IBOutlet weak var manEntryView: UIView!
     
-
+    let sessionManager = loadSession()
     
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
     //Decodable JSON for authentication token from Django server
     struct BarcodeJSONResponse: Decodable{
+        let toolkit_name: String
+        let toolkit_barcode: String
         let expected_tool_count: Int
     }
     
@@ -115,17 +117,20 @@ class BarcodeScanner: UIViewController {
         let token = try? keychain.get("auth_token")
         print(token!!)
 
-        let parameters:[String: Any] = [
-            "Authorization" : "Token " + token!!,
+        let parameters: Parameters = [
             "barcode_text": decodedBarcode
         ]
         
+        let headers: HTTPHeaders = [
+            "Authorization" : "Token " + token!!
+        ]
         //Alamofire passes credentials to url to verify the existence of the barcode in the system
-        let url = "http://35.9.22.103/image_verifier/api/barcode_validate/"
-        let request = Alamofire.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
+        let url = "https://35.9.22.103/image_verifier/api/barcode_validate/"
+        _ = sessionManager.getManager().request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent), headers: headers).responseString { response in
             switch response.result {
             case .success:
                 let jsonData = response.data
+                print(response)
                 let decoder = JSONDecoder()
                 guard let decodedResponse = try? decoder.decode(BarcodeJSONResponse.self, from: jsonData!) else{
                     print("barcode not in DB")

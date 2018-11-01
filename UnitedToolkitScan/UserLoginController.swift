@@ -11,6 +11,7 @@ import UIKit
 import Alamofire
 import KeychainAccess
 
+
 class UserLogin: UIViewController, UITextFieldDelegate{
     
     //Text field for username and password
@@ -134,32 +135,5 @@ class UserLogin: UIViewController, UITextFieldDelegate{
                 }
             }
         }
-    }
-}
-
-class loadSession {
-    var manager : SessionManager?
-    
-    init(){
-        print("Initializing manager from type ", type(of: manager))
-        self.manager = self.getManager()
-    }
-    
-    func getManager() -> SessionManager  {
-        if self.manager != nil {
-            print("Manager is not nil. Returning unwrapped manager")
-            print(type(of: (self.manager)))
-            return self.manager!
-        }
-        
-        let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "35.9.22.103": .disableEvaluation
-        ]
-        
-        self.manager = Alamofire.SessionManager(
-            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
-        )
-        
-        return self.manager!
     }
 }
