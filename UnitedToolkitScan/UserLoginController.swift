@@ -23,7 +23,7 @@ class UserLogin: UIViewController, UITextFieldDelegate{
         }
     }
     
-    
+    let sessionManager = loadSession()
     
     //var sessionManager: SessionManager?
     //Decodable JSON for authentication token from Django server
@@ -86,9 +86,8 @@ class UserLogin: UIViewController, UITextFieldDelegate{
             //Alamofire passes credentials to url to verify the user exists and will login if possible. Saves auth token to be used by keychain access.
             
             let url = "https://35.9.22.103/image_verifier/api/login/"
-            let tempSession = loadSession()
-            let tempManager = tempSession.shared.getManager().manager
-            _ = loadSession.manager.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
+
+            _ = sessionManager.getManager().request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
                 switch response.result {
                 case .success:
                     print("success")
@@ -130,6 +129,7 @@ class UserLogin: UIViewController, UITextFieldDelegate{
 
                 case .failure(let error):
                     print("error")
+                    print(response.description)
                     print(error)
                 }
             }
@@ -139,21 +139,27 @@ class UserLogin: UIViewController, UITextFieldDelegate{
 
 class loadSession {
     var manager : SessionManager?
-    static let shared = loadSession()
-    init(){}
-    func getManager(){
+    
+    init(){
+        print("Initializing manager from type ", type(of: manager))
+        self.manager = self.getManager()
+    }
+    
+    func getManager() -> SessionManager  {
+        if self.manager != nil {
+            print("Manager is not nil. Returning unwrapped manager")
+            print(type(of: (self.manager)))
+            return self.manager!
+        }
+        
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "35.9.22.103": .pinCertificates(
-                certificates: ServerTrustPolicy.certificates(),
-                validateCertificateChain: false,
-                validateHost: false
-                
-            ),
-            "35.9.22.103/image_verifier/api/login/": .disableEvaluation
+            "35.9.22.103": .disableEvaluation
         ]
         
-        manager = Alamofire.SessionManager(
+        self.manager = Alamofire.SessionManager(
             serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
         )
+        
+        return self.manager!
     }
 }
