@@ -25,6 +25,7 @@
 		84A4AE76217A5851007E9F7E /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE75217A5851007E9F7E /* Loading.storyboard */; };
 		84A4AE78217A6B5B007E9F7E /* ImgProcessingLoading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE77217A6B5B007E9F7E /* ImgProcessingLoading.storyboard */; };
 		84A4AE7A217A6B82007E9F7E /* ImgProcessingLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4AE79217A6B82007E9F7E /* ImgProcessingLoadingViewController.swift */; };
+		84B4F470218CD0A200CF5824 /* CheckBarcodeInDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4F46F218CD0A200CF5824 /* CheckBarcodeInDB.swift */; };
 		8BC3C6B2E3BFF1AFC4B96B0C /* Pods_UnitedToolkitScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADB4A0F5BA33217287499CD /* Pods_UnitedToolkitScan.framework */; };
 		BC0D7A53216EA82400A45185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0D7A52216EA82400A45185 /* ViewController.swift */; };
 		BC0D7A57216EA91700A45185 /* PreviewCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0D7A56216EA91700A45185 /* PreviewCameraViewController.swift */; };
@@ -53,6 +54,7 @@
 		84A4AE75217A5851007E9F7E /* Loading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loading.storyboard; sourceTree = "<group>"; };
 		84A4AE77217A6B5B007E9F7E /* ImgProcessingLoading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImgProcessingLoading.storyboard; sourceTree = "<group>"; };
 		84A4AE79217A6B82007E9F7E /* ImgProcessingLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgProcessingLoadingViewController.swift; sourceTree = "<group>"; };
+		84B4F46F218CD0A200CF5824 /* CheckBarcodeInDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBarcodeInDB.swift; sourceTree = "<group>"; };
 		BC0D7A52216EA82400A45185 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BC0D7A56216EA91700A45185 /* PreviewCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCameraViewController.swift; sourceTree = "<group>"; };
 		C0BF24F939B42D466A00E5AD /* Pods-UnitedToolkitScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitedToolkitScan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitedToolkitScan/Pods-UnitedToolkitScan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				840F5FEF21629D3E003A6E14 /* CameraCaptureController.swift */,
 				84A4AE5E216FDC07007E9F7E /* ExampleBarcode.storyboard */,
 				84A4AE58216E55F6007E9F7E /* BarcodeCapture.storyboard */,
+				84B4F46F218CD0A200CF5824 /* CheckBarcodeInDB.swift */,
 				84A4AE6821793CD4007E9F7E /* ManualEntryViewController.swift */,
 				843CA1AF215EADC500B1A534 /* BarcodeController.swift */,
 				84A4AE5A216E5B65007E9F7E /* CheckInCheckOut.storyboard */,
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B4F470218CD0A200CF5824 /* CheckBarcodeInDB.swift in Sources */,
 				84830F72218B8E6000769517 /* AlamofireSessionManager.swift in Sources */,
 				8497EDCA217571A500CCBDE1 /* CheckInCheckOutViewController.swift in Sources */,
 				BC0D7A57216EA91700A45185 /* PreviewCameraViewController.swift in Sources */,
