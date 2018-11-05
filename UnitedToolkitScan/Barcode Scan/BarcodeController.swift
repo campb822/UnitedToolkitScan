@@ -18,10 +18,11 @@ class BarcodeScanner: UIViewController {
     @IBOutlet weak var manEntryView: UIView!
     
     let sessionManager = loadSession()
-    
+//    let barcodeCheck = CheckBarcodeInDB()
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
+    var successfulCapBarcode: String?
     //Decodable JSON for authentication token from Django server
     struct BarcodeJSONResponse: Decodable{
         let toolkit_name: String
@@ -90,7 +91,6 @@ class BarcodeScanner: UIViewController {
     }
     
     func BarcodeDetected(decodedBarcode: String) {
-        let barcode = decodedBarcode
         if presentedViewController != nil {
             return
         }
@@ -99,7 +99,7 @@ class BarcodeScanner: UIViewController {
             let alertPrompt = UIAlertController(title: "Barcode Detected", message: "Kit ID:  \(decodedBarcode)", preferredStyle: .actionSheet)
             let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (action) -> Void in
 
-                self.SendBarcodeToServer(decodedBarcode: barcode)
+                self.SendBarcodeToServer(decodedBarcode: decodedBarcode)
             })
             
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
@@ -120,7 +120,7 @@ class BarcodeScanner: UIViewController {
         let parameters: Parameters = [
             "barcode_text": decodedBarcode
         ]
-        
+
         let headers: HTTPHeaders = [
             "Authorization" : "Token " + token!!
         ]
@@ -150,14 +150,26 @@ class BarcodeScanner: UIViewController {
                     print("cannot find view controller")
                     return
                 }
+                controller.successfulCapBarcode = decodedBarcode
                 self.navigationController!.pushViewController(controller, animated: true)
-                
+
             case .failure(let error):
                 print(error)
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is CameraCaptureController
+        {
+            let loadView = segue.destination as? CameraCaptureController
+            loadView?.successfulCapBarcode = self.successfulCapBarcode
+        }
+    }
+
 }
+
 
 extension BarcodeScanner: AVCaptureMetadataOutputObjectsDelegate {
     

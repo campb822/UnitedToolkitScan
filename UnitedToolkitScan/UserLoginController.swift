@@ -11,6 +11,7 @@ import UIKit
 import Alamofire
 import KeychainAccess
 
+
 class UserLogin: UIViewController, UITextFieldDelegate{
     
     //Text field for username and password
@@ -22,6 +23,10 @@ class UserLogin: UIViewController, UITextFieldDelegate{
             UIApplication.shared.open(url, options: [:])
         }
     }
+    
+    let sessionManager = loadSession()
+    
+    //var sessionManager: SessionManager?
     //Decodable JSON for authentication token from Django server
     struct JSONResponse: Decodable{
         let auth_token: String
@@ -35,6 +40,7 @@ class UserLogin: UIViewController, UITextFieldDelegate{
     //Hide Navigation Controller on login page
     override func viewDidLoad() {
         super.viewDidLoad()
+        //loadSession()
         self.navigationController?.isNavigationBarHidden = true;
     }
     
@@ -79,8 +85,10 @@ class UserLogin: UIViewController, UITextFieldDelegate{
             ]
             
             //Alamofire passes credentials to url to verify the user exists and will login if possible. Saves auth token to be used by keychain access.
-            let url = "http://35.9.22.103/image_verifier/api/login/"
-            let request = Alamofire.request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
+            
+            let url = "https://35.9.22.103/image_verifier/api/login/"
+
+            _ = sessionManager.getManager().request(url, method:.post, parameters: parameters, encoding: URLEncoding(destination: .methodDependent)).responseString { response in
                 switch response.result {
                 case .success:
                     print("success")
@@ -122,6 +130,7 @@ class UserLogin: UIViewController, UITextFieldDelegate{
 
                 case .failure(let error):
                     print("error")
+                    print(response.description)
                     print(error)
                 }
             }

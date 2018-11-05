@@ -23,6 +23,7 @@ class CameraCaptureController: UIViewController{
     //run fcns to get camera capture running
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false;
         setupCameraCaptureSession()
         setupDevice()
         setupIO()

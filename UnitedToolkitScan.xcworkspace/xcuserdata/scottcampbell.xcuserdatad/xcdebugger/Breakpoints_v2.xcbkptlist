@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitedToolkitScan/UserLoginController.swift"
+            timestampString = "562716506.589486"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "loginButtonPressed()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnitedToolkitScan.UserLogin.loginButtonPressed() -&gt; ()"
+                  moduleName = "UnitedToolkitScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/scottcampbell/Documents/UnitedToolkitScan/UnitedToolkitScan/UserLoginController.swift"
+                  timestampString = "562716506.607499"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "3083">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.String&gt;) -&gt; () in UnitedToolkitScan.UserLogin.loginButtonPressed() -&gt; ()"
+                  moduleName = "UnitedToolkitScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/scottcampbell/Documents/UnitedToolkitScan/UnitedToolkitScan/UserLoginController.swift"
+                  timestampString = "562716506.609856"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "71">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
