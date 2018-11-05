@@ -22,6 +22,7 @@ class BarcodeScanner: UIViewController {
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
+    var successfulCapBarcode: String?
     //Decodable JSON for authentication token from Django server
     struct BarcodeJSONResponse: Decodable{
         let toolkit_name: String
@@ -149,6 +150,7 @@ class BarcodeScanner: UIViewController {
                     print("cannot find view controller")
                     return
                 }
+                controller.successfulCapBarcode = decodedBarcode
                 self.navigationController!.pushViewController(controller, animated: true)
 
             case .failure(let error):
@@ -156,7 +158,18 @@ class BarcodeScanner: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is CameraCaptureController
+        {
+            let loadView = segue.destination as? CameraCaptureController
+            loadView?.successfulCapBarcode = self.successfulCapBarcode
+        }
+    }
+
 }
+
 
 extension BarcodeScanner: AVCaptureMetadataOutputObjectsDelegate {
     
