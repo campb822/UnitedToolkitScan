@@ -16,6 +16,14 @@ class PreviewCameraViewController: UIViewController {
     var img: UIImage!
     var imageData: Data!
     var imgFromServerData: Data!
+    var barcodeFromServ: String!
+    
+    var expected_tool_count : Int!
+    var result_id: Int!
+    var tool_count: Int!
+    var toolkit_name: String!
+    var toolkit_barcode: String!
+    
     @IBOutlet weak var photo: UIImageView!
 
     @IBAction func submitPhoto(_ sender: Any) {
@@ -29,6 +37,7 @@ class PreviewCameraViewController: UIViewController {
     }
     
     struct Img2JSONResponse:Decodable{
+        let expected_tool_count: Int;
         let result_id: Int;
         let tool_count: Int;
         let toolkit_barcode: String;
@@ -42,13 +51,10 @@ class PreviewCameraViewController: UIViewController {
     }
     
     func uploadImage() {
-        let loadingView = UIStoryboard(name: "Loading", bundle: Bundle.main)
+
         let imgFromServLoadingView = UIStoryboard(name: "ImgProcessingLoading", bundle: Bundle.main)
         //loadingView.imgData = response.data!
-        guard let controller = loadingView.instantiateViewController(withIdentifier: "loadViewController1") as? LoadingViewController else{
-            print("cannot find view controller")
-            return
-        }
+
         guard let controller1 = imgFromServLoadingView.instantiateViewController(withIdentifier: "imgLoadViewController") as? ImgProcessingLoadingViewController else{
             print("cannot find view controller")
             return
@@ -58,14 +64,13 @@ class PreviewCameraViewController: UIViewController {
         let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
         let token = try? keychain.get("auth_token")
         print(token!!)
-        
         let headers: HTTPHeaders = [
             "Authorization" : "Token " + token!!
         ]
         let parameters: Parameters = [
             "name": "test",
             "description" : "Image test upload from app",
-            "barcode_text" : 9567754
+            "barcode_text" : barcodeFromServ!
         ]
         
         sessionManager.getManager().upload(
@@ -97,7 +102,7 @@ class PreviewCameraViewController: UIViewController {
                             print("error")
                             return
                         }
-                        self.getDataFromServer(DataResponse: decodedResponse.result_id)
+                        self.getDataFromServer(DataResponse: decodedResponse)
 //                        do{
 //                            let decodedResponse = try decoder.decode(Img2JSONResponse.self, from: responseJSON!)
 //                        }
@@ -117,7 +122,7 @@ class PreviewCameraViewController: UIViewController {
         })
     }
     
-    func getDataFromServer(DataResponse: Any){
+    func getDataFromServer(DataResponse: Img2JSONResponse){
         let loadingView = UIStoryboard(name: "Loading", bundle: Bundle.main)
         //loadingView.imgData = response.data!
         guard let controller = loadingView.instantiateViewController(withIdentifier: "loadViewController1") as? LoadingViewController else{
@@ -130,7 +135,7 @@ class PreviewCameraViewController: UIViewController {
         
 
         let parameters:[String: Any] = [
-            "resultId": DataResponse
+            "resultId": DataResponse.result_id
         ]
         
         let headers: HTTPHeaders = [
@@ -141,15 +146,15 @@ class PreviewCameraViewController: UIViewController {
             switch response.result {
             case .success:
                 print("response description: ")
-                print(response.description)
+                //print(response.description)
                 controller.imgData = response.data!
-//                let jsonData = response.data
-//                let decoder = JSONDecoder()
-//                guard let decodedResponse = try? decoder.decode(Img2JSONResponse.self, from: jsonData!) else{
-//                    return
-//                }
-//                print("decoded response: ")
-//                print(decodedResponse)
+                controller.expected_tool_count = DataResponse.expected_tool_count
+                controller.result_id = DataResponse.result_id
+                controller.tool_count = DataResponse.tool_count
+                controller.toolkit_barcode = DataResponse.toolkit_barcode
+                controller.toolkit_name = DataResponse.toolkit_name
+                self.navigationController!.pushViewController(controller, animated: true)
+
             case .failure(let error):
                 print("error: ")
                 print(error)
@@ -163,6 +168,12 @@ class PreviewCameraViewController: UIViewController {
         {
             let loadView = segue.destination as? LoadingViewController
             loadView?.imgData = self.imgFromServerData
+            loadView?.expected_tool_count = self.expected_tool_count
+            loadView?.result_id = self.result_id
+            loadView?.tool_count = self.tool_count
+            loadView?.toolkit_barcode = self.toolkit_barcode
+            loadView?.toolkit_name = self.toolkit_name
+            
         }
     }
 

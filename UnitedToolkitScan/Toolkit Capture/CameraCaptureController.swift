@@ -10,7 +10,7 @@ import AVFoundation
 import UIKit
 
 class CameraCaptureController: UIViewController{
-    
+    var barcodeFromServ: String!
     var backCam: AVCaptureDevice?
     var captureSession = AVCaptureSession()
     var capturedPhoto: AVCapturePhotoOutput?
@@ -87,6 +87,7 @@ class CameraCaptureController: UIViewController{
         if segue.identifier == "showPhotoSegue"{
             let prevViewController = segue.destination as! PreviewCameraViewController
             prevViewController.img = self.img
+            prevViewController.barcodeFromServ = self.barcodeFromServ
         }
     }
     

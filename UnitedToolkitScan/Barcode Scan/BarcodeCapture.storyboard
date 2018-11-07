@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -90,7 +89,6 @@
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="manEntryConfirm:" destination="0xk-0N-cZT" eventType="touchUpInside" id="hz7-cv-l5g"/>
-                                    <segue destination="V65-Vg-85z" kind="show" id="Mwa-eO-stZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhr-cR-lC2">
@@ -119,15 +117,7 @@
                 <viewControllerPlaceholder storyboardName="ExampleBarcode" id="a1i-Bq-0xR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2p-8i-GIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2128" y="-236"/>
-        </scene>
-        <!--ToolkitCapture-->
-        <scene sceneID="MOs-KX-eTz">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ToolkitCapture" id="V65-Vg-85z" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x2L-fV-1bV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2128" y="276"/>
+            <point key="canvasLocation" x="2164" y="40"/>
         </scene>
     </scenes>
     <resources>

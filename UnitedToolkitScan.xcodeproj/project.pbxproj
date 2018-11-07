@@ -118,9 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				8457402D219370B700DC98BD /* ImgProcessingLoadingViewController.swift */,
+				84574030219370B700DC98BD /* LoadingViewController.swift */,
 				8457402E219370B700DC98BD /* Loading.storyboard */,
 				8457402F219370B700DC98BD /* ImgProcessingLoading.storyboard */,
-				84574030219370B700DC98BD /* LoadingViewController.swift */,
 			);
 			path = "Img Processing";
 			sourceTree = "<group>";
@@ -129,8 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				84574036219370CD00DC98BD /* PreviewCameraViewController.swift */,
-				84574037219370CD00DC98BD /* ToolkitCapture.storyboard */,
 				84574038219370CD00DC98BD /* CameraCaptureController.swift */,
+				84574037219370CD00DC98BD /* ToolkitCapture.storyboard */,
 			);
 			path = "Toolkit Capture";
 			sourceTree = "<group>";

@@ -18,7 +18,7 @@ class BarcodeScanner: UIViewController {
     @IBOutlet weak var manEntryView: UIView!
     
     let sessionManager = loadSession()
-    
+    var barcodeFromServ: String!
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
@@ -150,11 +150,22 @@ class BarcodeScanner: UIViewController {
                     print("cannot find view controller")
                     return
                 }
+                self.barcodeFromServ = decodedBarcode
+                controller.barcodeFromServ = self.barcodeFromServ
                 self.navigationController!.pushViewController(controller, animated: true)
                 
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is LoadingViewController
+        {
+            let loadView = segue.destination as? CameraCaptureController
+            loadView?.barcodeFromServ = barcodeFromServ
         }
     }
 }
