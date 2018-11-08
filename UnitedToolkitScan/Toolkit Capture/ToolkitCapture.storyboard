@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,32 +17,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GN-9z-EJb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GN-9z-EJb">
                                 <rect key="frame" x="167" y="636" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1GN-9z-EJb" secondAttribute="height" multiplier="1:1" id="2kJ-4q-kz0"/>
+                                </constraints>
                                 <state key="normal" image="Camera Button"/>
                                 <connections>
                                     <action selector="buttoncap:" destination="bN3-W6-v3D" eventType="touchUpInside" id="BC9-of-WbE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bottom Left Cam" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-Xk-jra">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bottom Left Cam" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-Xk-jra">
                                 <rect key="frame" x="20" y="551" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="A6F-Xk-jra" secondAttribute="height" multiplier="1:1" id="K7O-gl-ov9"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bottom Right Cam" translatesAutoresizingMaskIntoConstraints="NO" id="Kom-8t-VvN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bottom Right Cam" translatesAutoresizingMaskIntoConstraints="NO" id="Kom-8t-VvN">
                                 <rect key="frame" x="314" y="551" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Kom-8t-VvN" secondAttribute="height" multiplier="1:1" id="JHQ-r8-XkZ"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Top Left Cam" translatesAutoresizingMaskIntoConstraints="NO" id="yXy-rZ-7Np">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Top Left Cam" translatesAutoresizingMaskIntoConstraints="NO" id="yXy-rZ-7Np">
                                 <rect key="frame" x="20" y="85" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="OYc-fc-Rj5"/>
+                                    <constraint firstAttribute="width" secondItem="yXy-rZ-7Np" secondAttribute="height" multiplier="1:1" id="rhF-LV-vjv"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Top Right Cam" translatesAutoresizingMaskIntoConstraints="NO" id="dcq-yl-cN4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Top Right Cam" translatesAutoresizingMaskIntoConstraints="NO" id="dcq-yl-cN4">
                                 <rect key="frame" x="314" y="85" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dcq-yl-cN4" secondAttribute="height" multiplier="1:1" id="hTe-mU-Gl5"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="leading" secondItem="XZ8-cM-C3x" secondAttribute="leadingMargin" id="1xP-mc-sM0"/>
+                            <constraint firstItem="dcq-yl-cN4" firstAttribute="leading" secondItem="Kom-8t-VvN" secondAttribute="leading" id="2Xj-uR-H2h"/>
+                            <constraint firstItem="dcq-yl-cN4" firstAttribute="trailing" secondItem="XZ8-cM-C3x" secondAttribute="trailingMargin" id="7Oj-Bq-yg7"/>
+                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="bottom" secondItem="dcq-yl-cN4" secondAttribute="bottom" id="9vV-Jc-W4K"/>
+                            <constraint firstItem="QNe-pP-SkK" firstAttribute="bottom" secondItem="A6F-Xk-jra" secondAttribute="bottom" constant="105" id="Ekh-jX-lwt"/>
+                            <constraint firstItem="1GN-9z-EJb" firstAttribute="top" secondItem="QNe-pP-SkK" secondAttribute="top" constant="616" id="LWy-WG-rdS"/>
+                            <constraint firstItem="A6F-Xk-jra" firstAttribute="top" secondItem="Kom-8t-VvN" secondAttribute="top" id="WyC-Vf-DpA"/>
+                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="top" secondItem="dcq-yl-cN4" secondAttribute="top" id="XCN-NK-LgF"/>
+                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="leading" secondItem="A6F-Xk-jra" secondAttribute="leading" id="aY6-Dc-OU4"/>
+                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="top" secondItem="QNe-pP-SkK" secondAttribute="top" constant="65" id="bFZ-SQ-wAM"/>
+                            <constraint firstItem="A6F-Xk-jra" firstAttribute="bottom" secondItem="Kom-8t-VvN" secondAttribute="bottom" id="gBF-hz-o1H"/>
+                            <constraint firstAttribute="bottom" secondItem="1GN-9z-EJb" secondAttribute="bottom" constant="20" symbolic="YES" id="hF6-qg-uLg"/>
+                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="trailing" secondItem="A6F-Xk-jra" secondAttribute="trailing" id="kPP-Me-PyR"/>
+                            <constraint firstItem="1GN-9z-EJb" firstAttribute="centerX" secondItem="XZ8-cM-C3x" secondAttribute="centerX" id="z83-vb-UaW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QNe-pP-SkK"/>
                     </view>
                     <connections>
@@ -65,10 +91,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twI-R6-eZU">
                                 <rect key="frame" x="0.0" y="58" width="414" height="678"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odd-YQ-K3b">
-                                <rect key="frame" x="114" y="677" width="187" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odd-YQ-K3b">
+                                <rect key="frame" x="113.66666666666669" y="677" width="187" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.36470588240000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="odd-YQ-K3b" secondAttribute="height" multiplier="187:39" id="FhH-Xg-flp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title=" Submit ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,7 +123,9 @@
                             <constraint firstItem="twI-R6-eZU" firstAttribute="trailing" secondItem="X0M-Gx-D9Q" secondAttribute="trailing" id="DZ3-F3-UT0"/>
                             <constraint firstItem="twI-R6-eZU" firstAttribute="leading" secondItem="X0M-Gx-D9Q" secondAttribute="leading" id="DZq-Yi-GPf"/>
                             <constraint firstItem="twI-R6-eZU" firstAttribute="top" secondItem="O9g-Bc-UtN" secondAttribute="top" id="Jac-Wc-XxG"/>
+                            <constraint firstAttribute="bottom" secondItem="odd-YQ-K3b" secondAttribute="bottom" constant="20" symbolic="YES" id="LZC-Xf-cV2"/>
                             <constraint firstItem="twI-R6-eZU" firstAttribute="bottom" secondItem="X0M-Gx-D9Q" secondAttribute="bottom" id="def-2d-iIn"/>
+                            <constraint firstItem="odd-YQ-K3b" firstAttribute="centerX" secondItem="twI-R6-eZU" secondAttribute="centerX" id="gK9-au-cMg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X0M-Gx-D9Q"/>
                     </view>
@@ -110,10 +140,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bottom Left Cam" width="200" height="200"/>
-        <image name="Bottom Right Cam" width="200" height="200"/>
+        <image name="Bottom Left Cam" width="100" height="100"/>
+        <image name="Bottom Right Cam" width="100" height="100"/>
         <image name="Camera Button" width="125" height="126"/>
-        <image name="Top Left Cam" width="200" height="200"/>
-        <image name="Top Right Cam" width="200" height="200"/>
+        <image name="Top Left Cam" width="100" height="100"/>
+        <image name="Top Right Cam" width="100" height="100"/>
     </resources>
 </document>

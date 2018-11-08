@@ -19,7 +19,6 @@
 		84830F79218F8FD000769517 /* ExampleBarcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84830F74218F8FD000769517 /* ExampleBarcode.storyboard */; };
 		84830F7A218F8FD000769517 /* BarcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F75218F8FD000769517 /* BarcodeController.swift */; };
 		84830F7B218F8FD000769517 /* ManualEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F76218F8FD000769517 /* ManualEntryViewController.swift */; };
-		84830F7C218F8FD000769517 /* CheckBarcodeInDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F77218F8FD000769517 /* CheckBarcodeInDB.swift */; };
 		84830F7D218F8FD000769517 /* BarcodeCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84830F78218F8FD000769517 /* BarcodeCapture.storyboard */; };
 		84830F92218F8FE900769517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F83218F8FE900769517 /* AppDelegate.swift */; };
 		84830F93218F8FE900769517 /* AlamofireSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F84218F8FE900769517 /* AlamofireSessionManager.swift */; };
@@ -47,7 +46,6 @@
 		84830F74218F8FD000769517 /* ExampleBarcode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleBarcode.storyboard; sourceTree = "<group>"; };
 		84830F75218F8FD000769517 /* BarcodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeController.swift; sourceTree = "<group>"; };
 		84830F76218F8FD000769517 /* ManualEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualEntryViewController.swift; sourceTree = "<group>"; };
-		84830F77218F8FD000769517 /* CheckBarcodeInDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBarcodeInDB.swift; sourceTree = "<group>"; };
 		84830F78218F8FD000769517 /* BarcodeCapture.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BarcodeCapture.storyboard; sourceTree = "<group>"; };
 		84830F83218F8FE900769517 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84830F84218F8FE900769517 /* AlamofireSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireSessionManager.swift; sourceTree = "<group>"; };
@@ -128,8 +126,8 @@
 		84574035219370CD00DC98BD /* Toolkit Capture */ = {
 			isa = PBXGroup;
 			children = (
-				84574036219370CD00DC98BD /* PreviewCameraViewController.swift */,
 				84574038219370CD00DC98BD /* CameraCaptureController.swift */,
+				84574036219370CD00DC98BD /* PreviewCameraViewController.swift */,
 				84574037219370CD00DC98BD /* ToolkitCapture.storyboard */,
 			);
 			path = "Toolkit Capture";
@@ -140,7 +138,6 @@
 			children = (
 				84830F75218F8FD000769517 /* BarcodeController.swift */,
 				84830F76218F8FD000769517 /* ManualEntryViewController.swift */,
-				84830F77218F8FD000769517 /* CheckBarcodeInDB.swift */,
 				84830F74218F8FD000769517 /* ExampleBarcode.storyboard */,
 				84830F78218F8FD000769517 /* BarcodeCapture.storyboard */,
 			);
@@ -312,7 +309,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				84830F97218F8FE900769517 /* UserLoginController.swift in Sources */,
-				84830F7C218F8FD000769517 /* CheckBarcodeInDB.swift in Sources */,
 				84830F94218F8FE900769517 /* ViewController.swift in Sources */,
 				84830F93218F8FE900769517 /* AlamofireSessionManager.swift in Sources */,
 				84574034219370B700DC98BD /* LoadingViewController.swift in Sources */,

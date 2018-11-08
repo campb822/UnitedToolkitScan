@@ -17,7 +17,7 @@ class CameraCaptureController: UIViewController{
     
     var cameraPrevLayer: AVCaptureVideoPreviewLayer?
     var img: UIImage?
-
+    var check_type: String!
 
 
     //run fcns to get camera capture running
@@ -87,6 +87,7 @@ class CameraCaptureController: UIViewController{
         if segue.identifier == "showPhotoSegue"{
             let prevViewController = segue.destination as! PreviewCameraViewController
             prevViewController.img = self.img
+            prevViewController.check_type = self.check_type
             prevViewController.barcodeFromServ = self.barcodeFromServ
         }
     }

@@ -10,9 +10,18 @@ import UIKit
 
 class CheckInCheckOutViewController: UIViewController {
 
-    @IBOutlet weak var CheckInButton: UIButton!
-    @IBOutlet weak var CheckOutButton: UIButton!
+    var check_type: String!
+    //check_type = "in" or "out"
     
+    @IBAction func checkInButtonPush(_ sender: UIButton) {
+        self.check_type = "in"
+        loadNextStoryboard()
+    }
+    
+    @IBAction func checkOutButtonPush(_ sender: UIButton) {
+        self.check_type = "out"
+        loadNextStoryboard()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,14 +29,23 @@ class CheckInCheckOutViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func loadNextStoryboard(){
+        let storyboard = UIStoryboard(name: "BarcodeCapture", bundle: Bundle.main)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "BarcodeScanner") as? BarcodeScanner else{
+            print("cannot find view controller")
+            return
+        }
+        controller.check_type = self.check_type
+        self.navigationController!.pushViewController(controller, animated: true)
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is BarcodeScanner
+        {
+            let loadView = segue.destination as? BarcodeScanner
+            loadView?.check_type = self.check_type
+        }
+    }
 }

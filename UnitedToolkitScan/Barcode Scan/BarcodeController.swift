@@ -22,6 +22,7 @@ class BarcodeScanner: UIViewController {
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barCodeFrameView: UIView?
+    var check_type: String!
     //Decodable JSON for authentication token from Django server
     struct BarcodeJSONResponse: Decodable{
         let toolkit_name: String
@@ -136,6 +137,7 @@ class BarcodeScanner: UIViewController {
                     print("barcode not in DB")
                     let alert = UIAlertController(title: "ERROR", message: "Toolkit not found in database. Try again.", preferredStyle: .actionSheet)
                     let manEntryOption = UIAlertAction(title: "Manual Entry", style:UIAlertAction.Style.default, handler:{(action) -> Void in
+                        
                         self.manEntry.sendActions(for: .touchUpInside)
                     })
                     let cancel = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil)
@@ -152,6 +154,7 @@ class BarcodeScanner: UIViewController {
                 }
                 self.barcodeFromServ = decodedBarcode
                 controller.barcodeFromServ = self.barcodeFromServ
+                controller.check_type = self.check_type
                 self.navigationController!.pushViewController(controller, animated: true)
                 
             case .failure(let error):
@@ -166,6 +169,13 @@ class BarcodeScanner: UIViewController {
         {
             let loadView = segue.destination as? CameraCaptureController
             loadView?.barcodeFromServ = barcodeFromServ
+            loadView?.check_type = check_type
+        }
+        
+        if segue.destination is ManualEntryViewController
+        {
+            let loadView = segue.destination as? ManualEntryViewController
+            loadView?.check_type = check_type
         }
     }
 }

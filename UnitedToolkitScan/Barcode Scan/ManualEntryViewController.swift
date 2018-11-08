@@ -12,7 +12,7 @@ import Alamofire
 import AlamofireNetworkActivityIndicator
 
 class ManualEntryViewController: UIViewController {
-    
+    var check_type: String!
     let sessionManager = loadSession()
     struct BarcodeJSONResponse: Decodable{
         let toolkit_name: String
@@ -74,6 +74,7 @@ class ManualEntryViewController: UIViewController {
                 }
                 self.barcodeFromServ = self.manEntryField.text!
                 controller.barcodeFromServ = self.barcodeFromServ
+                controller.check_type = self.check_type
                 self.navigationController!.pushViewController(controller, animated: true)
                 
             case .failure(let error):
@@ -87,6 +88,7 @@ class ManualEntryViewController: UIViewController {
         {
             let loadView = segue.destination as? CameraCaptureController
             loadView?.barcodeFromServ = barcodeFromServ
+            loadView?.check_type = check_type
         }
     }
 }

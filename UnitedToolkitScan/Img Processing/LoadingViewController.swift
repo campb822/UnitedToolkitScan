@@ -26,6 +26,7 @@ class LoadingViewController: UIViewController {
     var toolkit_name: String!
     var toolkit_barcode: String!
     
+    
     @IBOutlet weak var toolkitNameLabel: UILabel!
     @IBOutlet weak var detectedToolsLabel: UILabel!
     @IBOutlet weak var expectedToolsLabel: UILabel!

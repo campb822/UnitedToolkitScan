@@ -20,19 +20,20 @@
         <!--Scan Toolkit Barcode-->
         <scene sceneID="TGj-qC-4ww">
             <objects>
-                <viewController id="EBJ-JO-BuW" customClass="BarcodeScanner" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BarcodeScanner" id="EBJ-JO-BuW" customClass="BarcodeScanner" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wpZ-ZZ-WBp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3S-Fq-aRt">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3S-Fq-aRt">
                                 <rect key="frame" x="0.0" y="688" width="414" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thz-vT-O5J">
+                                    <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thz-vT-O5J">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.36470588240000001" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Thz-vT-O5J" secondAttribute="height" multiplier="69:8" id="8w0-xq-nyK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Manual Entry">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,9 +44,20 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Thz-vT-O5J" secondAttribute="bottom" id="DSq-lK-qZK"/>
+                                    <constraint firstItem="Thz-vT-O5J" firstAttribute="top" secondItem="w3S-Fq-aRt" secondAttribute="top" id="Lbu-W6-5IS"/>
+                                    <constraint firstItem="Thz-vT-O5J" firstAttribute="leading" secondItem="w3S-Fq-aRt" secondAttribute="leading" id="O0u-WO-kaa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Thz-vT-O5J" secondAttribute="trailing" id="p85-aR-DgZ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="w3S-Fq-aRt" secondAttribute="trailing" id="UcC-le-vb5"/>
+                            <constraint firstItem="w3S-Fq-aRt" firstAttribute="bottom" secondItem="Gex-Re-9u5" secondAttribute="bottom" id="pHe-ix-dsY"/>
+                            <constraint firstItem="w3S-Fq-aRt" firstAttribute="leading" secondItem="wpZ-ZZ-WBp" secondAttribute="leading" id="qIr-fp-BMa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gex-Re-9u5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Scan Toolkit Barcode" id="zeZ-AU-iBO">
@@ -68,32 +80,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Toolkit Barcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GZ-0E-ht7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Toolkit Barcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GZ-0E-ht7">
                                 <rect key="frame" x="111" y="143" width="192" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="ks4-0P-6HN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Barcode" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sGB-ee-xIa">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Barcode" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sGB-ee-xIa">
                                 <rect key="frame" x="111" y="182" width="192" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzu-IR-pQo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzu-IR-pQo">
                                 <rect key="frame" x="170" y="236" width="74" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="manEntryConfirm:" destination="0xk-0N-cZT" eventType="touchUpInside" id="hz7-cv-l5g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhr-cR-lC2">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhr-cR-lC2">
                                 <rect key="frame" x="364" y="68" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nhr-cR-lC2" secondAttribute="height" multiplier="1:1" id="BUE-iR-fll"/>
+                                    <constraint firstAttribute="width" constant="30" id="SAk-04-Pbc"/>
+                                    <constraint firstAttribute="height" constant="30" id="sIb-sj-dzP"/>
+                                </constraints>
                                 <state key="normal" image="information"/>
                                 <connections>
                                     <segue destination="a1i-Bq-0xR" kind="show" id="frk-ZZ-bpL"/>
@@ -101,6 +117,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0GZ-0E-ht7" firstAttribute="top" secondItem="Oh5-VB-nMn" secondAttribute="top" constant="123" id="Hht-fP-LyY"/>
+                            <constraint firstItem="Oh5-VB-nMn" firstAttribute="trailing" secondItem="nhr-cR-lC2" secondAttribute="trailing" constant="20" id="J88-NK-KQX"/>
+                            <constraint firstItem="sGB-ee-xIa" firstAttribute="top" secondItem="0GZ-0E-ht7" secondAttribute="bottom" constant="8" symbolic="YES" id="M60-gT-UwO"/>
+                            <constraint firstItem="Dzu-IR-pQo" firstAttribute="top" secondItem="sGB-ee-xIa" secondAttribute="bottom" constant="24" id="VRG-wR-VoP"/>
+                            <constraint firstItem="0GZ-0E-ht7" firstAttribute="centerX" secondItem="Zvq-eR-PZz" secondAttribute="centerX" id="XW7-ta-ROn"/>
+                            <constraint firstItem="sGB-ee-xIa" firstAttribute="centerX" secondItem="Dzu-IR-pQo" secondAttribute="centerX" id="ZXM-R6-o7H"/>
+                            <constraint firstItem="0GZ-0E-ht7" firstAttribute="leading" secondItem="sGB-ee-xIa" secondAttribute="leading" id="gSC-KK-JKq"/>
+                            <constraint firstItem="0GZ-0E-ht7" firstAttribute="trailing" secondItem="sGB-ee-xIa" secondAttribute="trailing" id="xWd-23-TJq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Oh5-VB-nMn"/>
                     </view>
                     <connections>

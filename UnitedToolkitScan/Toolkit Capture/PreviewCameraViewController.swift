@@ -23,6 +23,7 @@ class PreviewCameraViewController: UIViewController {
     var tool_count: Int!
     var toolkit_name: String!
     var toolkit_barcode: String!
+    var check_type: String!
     
     @IBOutlet weak var photo: UIImageView!
 
@@ -70,7 +71,8 @@ class PreviewCameraViewController: UIViewController {
         let parameters: Parameters = [
             "name": "test",
             "description" : "Image test upload from app",
-            "barcode_text" : barcodeFromServ!
+            "barcode_text" : barcodeFromServ!,
+            "check_type" : check_type!
         ]
         
         sessionManager.getManager().upload(

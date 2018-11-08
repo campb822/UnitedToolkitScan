@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,12 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Man entry" translatesAutoresizingMaskIntoConstraints="NO" id="SVl-3k-Lam">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Man entry" translatesAutoresizingMaskIntoConstraints="NO" id="SVl-3k-Lam">
                                 <rect key="frame" x="20" y="316" width="374" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SVl-3k-Lam" secondAttribute="height" multiplier="187:57" id="g9F-e7-u9r"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SVl-3k-Lam" firstAttribute="trailing" secondItem="iPI-ux-JTA" secondAttribute="trailingMargin" id="MIM-hm-nOP"/>
+                            <constraint firstItem="SVl-3k-Lam" firstAttribute="leading" secondItem="iPI-ux-JTA" secondAttribute="leadingMargin" id="eg6-zv-8kB"/>
+                            <constraint firstItem="SVl-3k-Lam" firstAttribute="top" secondItem="mtq-no-JTh" secondAttribute="top" constant="296" id="vSu-Df-9q3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mtq-no-JTh"/>
                     </view>
                 </viewController>

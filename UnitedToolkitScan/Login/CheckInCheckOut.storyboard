@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +15,7 @@
                 <viewControllerPlaceholder storyboardName="Main" id="kVB-ws-T0S" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKB-1z-irJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="67" y="1071"/>
+            <point key="canvasLocation" x="974" y="1067"/>
         </scene>
         <!--Toolkit Verification System-->
         <scene sceneID="j6I-FP-avt">
@@ -26,45 +25,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="United_logo" translatesAutoresizingMaskIntoConstraints="NO" id="BhJ-um-NyV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="United_logo" translatesAutoresizingMaskIntoConstraints="NO" id="BhJ-um-NyV">
                                 <rect key="frame" x="87" y="141" width="240" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BhJ-um-NyV" secondAttribute="height" multiplier="40:7" id="umF-Sj-ehM"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check In Toolkit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-v6-VMc">
-                                <rect key="frame" x="132" y="383" width="151" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check In Toolkit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-v6-VMc">
+                                <rect key="frame" x="20" y="383" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SN4-v6-VMc" secondAttribute="height" multiplier="151:21" constant="223" id="Tyw-IL-73j"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm8-hE-ljy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm8-hE-ljy">
                                 <rect key="frame" x="142" y="245" width="130" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
-                                <state key="normal" title="Button" image="Check in"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gm8-hE-ljy" secondAttribute="height" multiplier="1:1" id="Jan-m7-EnF"/>
+                                </constraints>
+                                <state key="normal" image="Check in"/>
                                 <connections>
-                                    <segue destination="SSJ-X8-BKl" kind="show" id="Trb-47-hii"/>
+                                    <action selector="checkInButtonPush:" destination="2YH-DW-nP3" eventType="touchUpInside" id="9Rw-88-OGz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzS-7B-W2L">
-                                <rect key="frame" x="142" y="490" width="130" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Check out"/>
-                                <connections>
-                                    <segue destination="tH7-ob-vEA" kind="show" id="aVp-RR-Ftd"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check Out Toolkit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfZ-oy-adN">
-                                <rect key="frame" x="122" y="628" width="171" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Out Toolkit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfZ-oy-adN">
+                                <rect key="frame" x="20" y="628" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mfZ-oy-adN" secondAttribute="height" multiplier="57:7" constant="203" id="H2D-TU-nJY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzS-7B-W2L">
+                                <rect key="frame" x="142" y="490" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jzS-7B-W2L" secondAttribute="height" multiplier="1:1" id="qnk-3G-TkJ"/>
+                                </constraints>
+                                <state key="normal" image="Check out"/>
+                                <connections>
+                                    <action selector="checkOutButtonPush:" destination="2YH-DW-nP3" eventType="touchUpInside" id="1Ph-b3-z3o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BhJ-um-NyV" firstAttribute="centerX" secondItem="jgO-e5-4XY" secondAttribute="centerX" id="Esl-Bj-MvY"/>
+                            <constraint firstItem="dcF-xJ-Vam" firstAttribute="bottom" secondItem="mfZ-oy-adN" secondAttribute="bottom" constant="87" id="Fb1-N3-JPw"/>
+                            <constraint firstItem="gm8-hE-ljy" firstAttribute="top" secondItem="BhJ-um-NyV" secondAttribute="bottom" constant="62" id="Nmd-2G-2ls"/>
+                            <constraint firstItem="gm8-hE-ljy" firstAttribute="trailing" secondItem="jzS-7B-W2L" secondAttribute="trailing" id="Rco-A1-SdK"/>
+                            <constraint firstItem="jzS-7B-W2L" firstAttribute="top" secondItem="SN4-v6-VMc" secondAttribute="bottom" constant="86" id="SVd-Fe-FxY"/>
+                            <constraint firstItem="mfZ-oy-adN" firstAttribute="leading" secondItem="dcF-xJ-Vam" secondAttribute="leading" constant="20" id="TaX-uz-Y9j"/>
+                            <constraint firstItem="mfZ-oy-adN" firstAttribute="top" secondItem="jzS-7B-W2L" secondAttribute="bottom" constant="8" symbolic="YES" id="WxJ-nL-axX"/>
+                            <constraint firstItem="gm8-hE-ljy" firstAttribute="leading" secondItem="jzS-7B-W2L" secondAttribute="leading" id="avk-qh-3yI"/>
+                            <constraint firstItem="SN4-v6-VMc" firstAttribute="leading" secondItem="dcF-xJ-Vam" secondAttribute="leading" constant="20" id="hCz-Le-eXb"/>
+                            <constraint firstItem="BhJ-um-NyV" firstAttribute="leading" secondItem="dcF-xJ-Vam" secondAttribute="leading" constant="87" id="iup-RW-Ngq"/>
+                            <constraint firstItem="BhJ-um-NyV" firstAttribute="top" secondItem="dcF-xJ-Vam" secondAttribute="top" constant="121" id="nlb-jW-Lia"/>
+                            <constraint firstItem="jzS-7B-W2L" firstAttribute="centerX" secondItem="mfZ-oy-adN" secondAttribute="centerX" id="vo8-Nr-TzX"/>
+                            <constraint firstItem="gm8-hE-ljy" firstAttribute="centerX" secondItem="SN4-v6-VMc" secondAttribute="centerX" id="xNp-4U-PEe"/>
+                            <constraint firstItem="SN4-v6-VMc" firstAttribute="top" secondItem="gm8-hE-ljy" secondAttribute="bottom" constant="8" symbolic="YES" id="zIc-eo-MkE"/>
+                            <constraint firstItem="BhJ-um-NyV" firstAttribute="centerX" secondItem="gm8-hE-ljy" secondAttribute="centerX" id="zfW-nk-i5L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dcF-xJ-Vam"/>
                     </view>
                     <navigationItem key="navigationItem" title="Toolkit Verification System" id="buT-Tt-AaJ">
@@ -82,30 +108,10 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="CheckInButton" destination="gm8-hE-ljy" id="xvk-N3-bM9"/>
-                        <outlet property="CheckOutButton" destination="jzS-7B-W2L" id="nui-jH-NyH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcc-vZ-pt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="973.91304347826099" y="608.96739130434787"/>
-        </scene>
-        <!--BarcodeCapture-->
-        <scene sceneID="j8O-hW-RGT">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CheckInToolkit" storyboardName="BarcodeCapture" id="SSJ-X8-BKl" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="33Q-4n-NvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1705.072463768116" y="338.31521739130437"/>
-        </scene>
-        <!--BarcodeCapture-->
-        <scene sceneID="tI7-h1-5Y2">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CheckOutToolkit" storyboardName="BarcodeCapture" id="tH7-ob-vEA" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7bO-je-7Pa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1705.072463768116" y="879.61956521739137"/>
         </scene>
     </scenes>
     <resources>

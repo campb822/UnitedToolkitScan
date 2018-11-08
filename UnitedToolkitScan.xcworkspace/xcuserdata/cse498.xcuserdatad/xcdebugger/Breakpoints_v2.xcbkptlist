@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UnitedToolkitScan/Toolkit Capture/PreviewCameraViewController.swift"
-            timestampString = "563320676.357393"
+            timestampString = "563408298.847936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "getDataFromServer(DataResponse:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,23 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UnitedToolkitScan/Toolkit Capture/PreviewCameraViewController.swift"
-            timestampString = "563320676.35771"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "uploadImage()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UnitedToolkitScan/Toolkit Capture/PreviewCameraViewController.swift"
-            timestampString = "563320676.357921"
+            timestampString = "563408298.848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
@@ -90,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UnitedToolkitScan/Toolkit Capture/PreviewCameraViewController.swift"
-            timestampString = "563320676.3581229"
+            timestampString = "563408298.8480411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "uploadImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,13 +90,233 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UnitedToolkitScan/Toolkit Capture/PreviewCameraViewController.swift"
-            timestampString = "563320676.358326"
+            timestampString = "563408298.84808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "uploadImage()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitedToolkitScan/Toolkit Capture/PreviewCameraViewController.swift"
+            timestampString = "563408298.848115"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "getDataFromServer(DataResponse:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitedToolkitScan/Login/UserLoginController.swift"
+            timestampString = "563403507.558266"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitedToolkitScan/Login/UserLoginController.swift"
+            timestampString = "563403507.558304"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitedToolkitScan/Login/UserLoginController.swift"
+            timestampString = "563403507.558619"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitedToolkitScan/Barcode Scan/BarcodeController.swift"
+            timestampString = "563408298.848202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "BarcodeScanner"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnitedToolkitScan.BarcodeScanner.check_type.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "UnitedToolkitScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cse498/Documents/UnitedToolkitScan/UnitedToolkitScan/Barcode%20Scan/BarcodeController.swift"
+                  timestampString = "563405041.52905"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnitedToolkitScan.BarcodeScanner.check_type.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "UnitedToolkitScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cse498/Documents/UnitedToolkitScan/UnitedToolkitScan/Barcode%20Scan/BarcodeController.swift"
+                  timestampString = "563405041.530502"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnitedToolkitScan.BarcodeScanner.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; UnitedToolkitScan.BarcodeScanner"
+                  moduleName = "UnitedToolkitScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cse498/Documents/UnitedToolkitScan/UnitedToolkitScan/Barcode%20Scan/BarcodeController.swift"
+                  timestampString = "563405041.5323581"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "604">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnitedToolkitScan.BarcodeScanner.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;UnitedToolkitScan.BarcodeScanner&gt;"
+                  moduleName = "UnitedToolkitScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cse498/Documents/UnitedToolkitScan/UnitedToolkitScan/Barcode%20Scan/BarcodeController.swift"
+                  timestampString = "563405041.534024"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "580">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitedToolkitScan/Barcode Scan/BarcodeController.swift"
+            timestampString = "563408298.848244"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "BarcodeScanner"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnitedToolkitScan.BarcodeScanner.barcodeFromServ.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "UnitedToolkitScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cse498/Documents/UnitedToolkitScan/UnitedToolkitScan/Barcode%20Scan/BarcodeController.swift"
+                  timestampString = "563405041.539355"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnitedToolkitScan.BarcodeScanner.barcodeFromServ.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "UnitedToolkitScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cse498/Documents/UnitedToolkitScan/UnitedToolkitScan/Barcode%20Scan/BarcodeController.swift"
+                  timestampString = "563405041.5408109"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnitedToolkitScan.BarcodeScanner.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; UnitedToolkitScan.BarcodeScanner"
+                  moduleName = "UnitedToolkitScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cse498/Documents/UnitedToolkitScan/UnitedToolkitScan/Barcode%20Scan/BarcodeController.swift"
+                  timestampString = "563405041.5422651"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnitedToolkitScan.BarcodeScanner.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;UnitedToolkitScan.BarcodeScanner&gt;"
+                  moduleName = "UnitedToolkitScan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cse498/Documents/UnitedToolkitScan/UnitedToolkitScan/Barcode%20Scan/BarcodeController.swift"
+                  timestampString = "563405041.543687"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "288">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
