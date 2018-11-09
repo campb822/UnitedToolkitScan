@@ -63,7 +63,21 @@ class ManualEntryViewController: UIViewController {
                     let alert = UIAlertController(title: "ERROR", message: "Toolkit not found in database. Contact Administrator.", preferredStyle: .actionSheet)
                     let cancel = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil)
                     alert.addAction(cancel)
-                    self.present(alert, animated: true, completion: nil)
+                    
+                    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad )
+                    {
+                        if let currentPopoverpresentioncontroller = alert.popoverPresentationController{
+                            currentPopoverpresentioncontroller.sourceView = self.view
+                            currentPopoverpresentioncontroller.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                            currentPopoverpresentioncontroller.permittedArrowDirections = []
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }else{
+                        self.present(alert, animated: true, completion: nil)
+                        //present(alert, animated: true, completion: nil)
+                        
+                    }
+                    
                     return
                 }
                 print(decodedResponse.expected_tool_count)

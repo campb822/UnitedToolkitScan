@@ -11,8 +11,8 @@ import UIKit
 class CheckInCheckOutViewController: UIViewController {
 
     var check_type: String!
-    //check_type = "in" or "out"
     
+    //check_type represents if user is checking in or checking out toolkit. Passed through vc's until image sent to server
     @IBAction func checkInButtonPush(_ sender: UIButton) {
         self.check_type = "in"
         loadNextStoryboard()
@@ -29,7 +29,7 @@ class CheckInCheckOutViewController: UIViewController {
     }
     
 
-    
+    //Load barcode capture storyboard
     func loadNextStoryboard(){
         let storyboard = UIStoryboard(name: "BarcodeCapture", bundle: Bundle.main)
         guard let controller = storyboard.instantiateViewController(withIdentifier: "BarcodeScanner") as? BarcodeScanner else{

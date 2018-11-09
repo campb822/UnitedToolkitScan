@@ -44,8 +44,9 @@ class LoadingViewController: UIViewController {
         imgFromServ.image = img
         
         toolkitNameLabel.text = "Toolkit Name: \(toolkit_name!)"
-        detectedToolsLabel.text = "Toolkit Detected: \(tool_count!)"
-        expectedToolsLabel.text = "Toolkit Expected: \(expected_tool_count!)"
+        detectedToolsLabel.text = "Tools Detected: \(tool_count!)"
+        //detectedToolsLabel.text = "Tools Detected: 6"
+        expectedToolsLabel.text = "Tools Expected: \(expected_tool_count!)"
         barcodeLabel.text = "Barcode: \(toolkit_barcode!)"
         
     }

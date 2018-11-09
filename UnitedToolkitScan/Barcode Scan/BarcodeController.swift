@@ -90,6 +90,7 @@ class BarcodeScanner: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Run when a barcode is detected. Prompts user to confirm they have scanned the desired barcode.
     func BarcodeDetected(decodedBarcode: String) {
         let barcode = decodedBarcode
         if presentedViewController != nil {
@@ -97,6 +98,7 @@ class BarcodeScanner: UIViewController {
         }
         
         if (decodedBarcode.count == 7){
+            print(UI_USER_INTERFACE_IDIOM())
             let alertPrompt = UIAlertController(title: "Barcode Detected", message: "Kit ID:  \(decodedBarcode)", preferredStyle: .actionSheet)
             let confirmAction = UIAlertAction(title: "Confirm", style: UIAlertAction.Style.default, handler: { (action) -> Void in
 
@@ -108,11 +110,23 @@ class BarcodeScanner: UIViewController {
             alertPrompt.addAction(confirmAction)
             alertPrompt.addAction(cancelAction)
             
-            present(alertPrompt, animated: true, completion: nil)
+            if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad )
+            {
+                if let currentPopoverpresentioncontroller = alertPrompt.popoverPresentationController{
+                    currentPopoverpresentioncontroller.sourceView = self.view
+                    currentPopoverpresentioncontroller.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                    currentPopoverpresentioncontroller.permittedArrowDirections = []
+                    self.present(alertPrompt, animated: true, completion: nil)
+                }
+            }else{
+                present(alertPrompt, animated: true, completion: nil)
+                //self.presentViewController(optionMenu, animated: true, completion: nil)
+            }
+            
         }
     }
     
-    
+    //Sends captured barcode to server encoded as "barcode_text" as the parameter. If not in DB, alert user and allow for manual entry or to try again.
     func SendBarcodeToServer(decodedBarcode: String){
         let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
         let token = try? keychain.get("auth_token")
@@ -143,7 +157,19 @@ class BarcodeScanner: UIViewController {
                     let cancel = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil)
                     alert.addAction(manEntryOption)
                     alert.addAction(cancel)
-                    self.present(alert, animated: true, completion: nil)
+                    
+                    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad )
+                    {
+                        if let currentPopoverpresentioncontroller = alert.popoverPresentationController{
+                            currentPopoverpresentioncontroller.sourceView = self.view
+                            currentPopoverpresentioncontroller.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                            currentPopoverpresentioncontroller.permittedArrowDirections = []
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }else{
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
                     return
                 }
                 print(decodedResponse.expected_tool_count)
@@ -163,6 +189,7 @@ class BarcodeScanner: UIViewController {
         }
     }
     
+    //Allows data to be passed between controllers when a segue is performed (transition between storyboards)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.destination is LoadingViewController
@@ -180,6 +207,7 @@ class BarcodeScanner: UIViewController {
     }
 }
 
+//Extends avcapturemetadataoutputobjectsdelegate to display bounds around barcode and runs barcodedetected() if encoded barcode is detected.
 extension BarcodeScanner: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {

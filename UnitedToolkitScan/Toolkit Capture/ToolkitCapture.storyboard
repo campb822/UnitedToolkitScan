@@ -20,55 +20,20 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GN-9z-EJb">
                                 <rect key="frame" x="167" y="636" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="1GN-9z-EJb" secondAttribute="height" multiplier="1:1" id="2kJ-4q-kz0"/>
+                                    <constraint firstAttribute="width" constant="80" id="26b-04-teP"/>
+                                    <constraint firstAttribute="width" secondItem="1GN-9z-EJb" secondAttribute="height" multiplier="1:1" id="QKb-qV-3Yc"/>
+                                    <constraint firstAttribute="height" constant="80" id="Ycc-ce-jeU"/>
                                 </constraints>
                                 <state key="normal" image="Camera Button"/>
                                 <connections>
                                     <action selector="buttoncap:" destination="bN3-W6-v3D" eventType="touchUpInside" id="BC9-of-WbE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bottom Left Cam" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-Xk-jra">
-                                <rect key="frame" x="20" y="551" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="A6F-Xk-jra" secondAttribute="height" multiplier="1:1" id="K7O-gl-ov9"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bottom Right Cam" translatesAutoresizingMaskIntoConstraints="NO" id="Kom-8t-VvN">
-                                <rect key="frame" x="314" y="551" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Kom-8t-VvN" secondAttribute="height" multiplier="1:1" id="JHQ-r8-XkZ"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Top Left Cam" translatesAutoresizingMaskIntoConstraints="NO" id="yXy-rZ-7Np">
-                                <rect key="frame" x="20" y="85" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="OYc-fc-Rj5"/>
-                                    <constraint firstAttribute="width" secondItem="yXy-rZ-7Np" secondAttribute="height" multiplier="1:1" id="rhF-LV-vjv"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Top Right Cam" translatesAutoresizingMaskIntoConstraints="NO" id="dcq-yl-cN4">
-                                <rect key="frame" x="314" y="85" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="dcq-yl-cN4" secondAttribute="height" multiplier="1:1" id="hTe-mU-Gl5"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="leading" secondItem="XZ8-cM-C3x" secondAttribute="leadingMargin" id="1xP-mc-sM0"/>
-                            <constraint firstItem="dcq-yl-cN4" firstAttribute="leading" secondItem="Kom-8t-VvN" secondAttribute="leading" id="2Xj-uR-H2h"/>
-                            <constraint firstItem="dcq-yl-cN4" firstAttribute="trailing" secondItem="XZ8-cM-C3x" secondAttribute="trailingMargin" id="7Oj-Bq-yg7"/>
-                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="bottom" secondItem="dcq-yl-cN4" secondAttribute="bottom" id="9vV-Jc-W4K"/>
-                            <constraint firstItem="QNe-pP-SkK" firstAttribute="bottom" secondItem="A6F-Xk-jra" secondAttribute="bottom" constant="105" id="Ekh-jX-lwt"/>
-                            <constraint firstItem="1GN-9z-EJb" firstAttribute="top" secondItem="QNe-pP-SkK" secondAttribute="top" constant="616" id="LWy-WG-rdS"/>
-                            <constraint firstItem="A6F-Xk-jra" firstAttribute="top" secondItem="Kom-8t-VvN" secondAttribute="top" id="WyC-Vf-DpA"/>
-                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="top" secondItem="dcq-yl-cN4" secondAttribute="top" id="XCN-NK-LgF"/>
-                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="leading" secondItem="A6F-Xk-jra" secondAttribute="leading" id="aY6-Dc-OU4"/>
-                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="top" secondItem="QNe-pP-SkK" secondAttribute="top" constant="65" id="bFZ-SQ-wAM"/>
-                            <constraint firstItem="A6F-Xk-jra" firstAttribute="bottom" secondItem="Kom-8t-VvN" secondAttribute="bottom" id="gBF-hz-o1H"/>
-                            <constraint firstAttribute="bottom" secondItem="1GN-9z-EJb" secondAttribute="bottom" constant="20" symbolic="YES" id="hF6-qg-uLg"/>
-                            <constraint firstItem="yXy-rZ-7Np" firstAttribute="trailing" secondItem="A6F-Xk-jra" secondAttribute="trailing" id="kPP-Me-PyR"/>
-                            <constraint firstItem="1GN-9z-EJb" firstAttribute="centerX" secondItem="XZ8-cM-C3x" secondAttribute="centerX" id="z83-vb-UaW"/>
+                            <constraint firstAttribute="bottom" secondItem="1GN-9z-EJb" secondAttribute="bottom" constant="20" symbolic="YES" id="Jjx-E1-v3T"/>
+                            <constraint firstItem="1GN-9z-EJb" firstAttribute="centerX" secondItem="XZ8-cM-C3x" secondAttribute="centerX" id="oeA-c5-lV6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QNe-pP-SkK"/>
                     </view>
@@ -140,10 +105,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bottom Left Cam" width="100" height="100"/>
-        <image name="Bottom Right Cam" width="100" height="100"/>
         <image name="Camera Button" width="125" height="126"/>
-        <image name="Top Left Cam" width="100" height="100"/>
-        <image name="Top Right Cam" width="100" height="100"/>
     </resources>
 </document>
