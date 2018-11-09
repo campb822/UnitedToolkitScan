@@ -16,15 +16,12 @@ class loadSession {
     var manager : SessionManager?
     
     init(){
-        print("Initializing manager from type ", type(of: manager))
         self.manager = self.getManager()
     }
     
     
     func getManager() -> SessionManager  {
         if self.manager != nil {
-            print("Manager is not nil. Returning unwrapped manager")
-            //print(type(of: (self.manager)))
             return self.manager!
         }
         

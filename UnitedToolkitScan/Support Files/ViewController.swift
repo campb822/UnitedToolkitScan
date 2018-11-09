@@ -8,7 +8,6 @@ class BarCodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        (UIApplication.shared.delegate as! AppDelegate).restrictRotation = .all
     }
     
     override func didReceiveMemoryWarning() {

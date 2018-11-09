@@ -12,6 +12,10 @@ class CheckInCheckOutViewController: UIViewController {
 
     var check_type: String!
     
+    @IBAction func logoutButtonPressed(_ sender: UIButton) {
+        
+        print("pushed Logout")
+    }
     //check_type represents if user is checking in or checking out toolkit. Passed through vc's until image sent to server
     @IBAction func checkInButtonPush(_ sender: UIButton) {
         self.check_type = "in"
