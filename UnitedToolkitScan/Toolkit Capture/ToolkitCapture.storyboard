@@ -53,7 +53,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twI-R6-eZU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="twI-R6-eZU">
                                 <rect key="frame" x="0.0" y="58" width="414" height="678"/>
                             </imageView>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odd-YQ-K3b">
@@ -87,7 +87,7 @@
                         <constraints>
                             <constraint firstItem="twI-R6-eZU" firstAttribute="trailing" secondItem="X0M-Gx-D9Q" secondAttribute="trailing" id="DZ3-F3-UT0"/>
                             <constraint firstItem="twI-R6-eZU" firstAttribute="leading" secondItem="X0M-Gx-D9Q" secondAttribute="leading" id="DZq-Yi-GPf"/>
-                            <constraint firstItem="twI-R6-eZU" firstAttribute="top" secondItem="O9g-Bc-UtN" secondAttribute="top" id="Jac-Wc-XxG"/>
+                            <constraint firstItem="twI-R6-eZU" firstAttribute="top" secondItem="O9g-Bc-UtN" secondAttribute="top" constant="58" id="Jac-Wc-XxG"/>
                             <constraint firstAttribute="bottom" secondItem="odd-YQ-K3b" secondAttribute="bottom" constant="20" symbolic="YES" id="LZC-Xf-cV2"/>
                             <constraint firstItem="twI-R6-eZU" firstAttribute="bottom" secondItem="X0M-Gx-D9Q" secondAttribute="bottom" id="def-2d-iIn"/>
                             <constraint firstItem="odd-YQ-K3b" firstAttribute="centerX" secondItem="twI-R6-eZU" secondAttribute="centerX" id="gK9-au-cMg"/>

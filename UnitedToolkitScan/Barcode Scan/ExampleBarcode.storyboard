@@ -23,12 +23,20 @@
                                     <constraint firstAttribute="width" secondItem="SVl-3k-Lam" secondAttribute="height" multiplier="187:57" id="g9F-e7-u9r"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example Barcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRY-9Q-ZhA">
+                                <rect key="frame" x="20" y="258" width="374" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SVl-3k-Lam" firstAttribute="trailing" secondItem="iPI-ux-JTA" secondAttribute="trailingMargin" id="MIM-hm-nOP"/>
+                            <constraint firstItem="oRY-9Q-ZhA" firstAttribute="top" secondItem="mtq-no-JTh" secondAttribute="top" constant="238" id="dPr-5E-3mQ"/>
                             <constraint firstItem="SVl-3k-Lam" firstAttribute="leading" secondItem="iPI-ux-JTA" secondAttribute="leadingMargin" id="eg6-zv-8kB"/>
                             <constraint firstItem="SVl-3k-Lam" firstAttribute="top" secondItem="mtq-no-JTh" secondAttribute="top" constant="296" id="vSu-Df-9q3"/>
+                            <constraint firstItem="oRY-9Q-ZhA" firstAttribute="trailing" secondItem="SVl-3k-Lam" secondAttribute="trailing" id="wrk-nS-LkL"/>
+                            <constraint firstItem="oRY-9Q-ZhA" firstAttribute="leading" secondItem="SVl-3k-Lam" secondAttribute="leading" id="zPO-BL-Tl5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mtq-no-JTh"/>
                     </view>

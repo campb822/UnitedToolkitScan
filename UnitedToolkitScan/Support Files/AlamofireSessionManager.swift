@@ -16,6 +16,7 @@ class loadSession {
     var manager : SessionManager?
     
     init(){
+        
         self.manager = self.getManager()
     }
     
@@ -29,7 +30,12 @@ class loadSession {
             "35.9.22.103": .disableEvaluation
         ]
         
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 4 // seconds
+        configuration.timeoutIntervalForResource = 4
+        
         self.manager = Alamofire.SessionManager(
+            configuration: configuration,
             serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
         )
         

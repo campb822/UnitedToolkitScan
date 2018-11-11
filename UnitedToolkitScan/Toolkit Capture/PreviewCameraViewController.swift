@@ -155,6 +155,7 @@ class PreviewCameraViewController: UIViewController {
                 controller.tool_count = DataResponse.tool_count
                 controller.toolkit_barcode = DataResponse.toolkit_barcode
                 controller.toolkit_name = DataResponse.toolkit_name
+                controller.check_type = self.check_type
                 self.navigationController!.pushViewController(controller, animated: true)
 
             case .failure(let error):
@@ -175,7 +176,7 @@ class PreviewCameraViewController: UIViewController {
             loadView?.tool_count = self.tool_count
             loadView?.toolkit_barcode = self.toolkit_barcode
             loadView?.toolkit_name = self.toolkit_name
-            
+            loadView?.check_type = self.check_type
         }
     }
 

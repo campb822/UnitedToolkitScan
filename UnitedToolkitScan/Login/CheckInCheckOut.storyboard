@@ -20,8 +20,8 @@
         <!--Toolkit Verification System-->
         <scene sceneID="j6I-FP-avt">
             <objects>
-                <viewController storyboardIdentifier="CheckInCheckOutStoryboard" id="2YH-DW-nP3" customClass="CheckInCheckOutViewController" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jgO-e5-4XY">
+                <viewController storyboardIdentifier="CheckInCheckOutStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2YH-DW-nP3" customClass="CheckInCheckOutViewController" customModule="UnitedToolkitScan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="CheckInCheckOutStoryboard" id="jgO-e5-4XY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -94,7 +94,7 @@
                         <viewLayoutGuide key="safeArea" id="dcF-xJ-Vam"/>
                     </view>
                     <navigationItem key="navigationItem" title="Toolkit Verification System" id="buT-Tt-AaJ">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" style="plain" id="rjP-J3-zoh">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="rjP-J3-zoh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d7j-bA-BYk">
                                 <rect key="frame" x="20" y="4" width="68" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
