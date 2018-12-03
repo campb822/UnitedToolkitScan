@@ -54,8 +54,6 @@ class PreviewCameraViewController: UIViewController {
     func uploadImage() {
 
         let imgFromServLoadingView = UIStoryboard(name: "ImgProcessingLoading", bundle: Bundle.main)
-        //loadingView.imgData = response.data!
-
         guard let controller1 = imgFromServLoadingView.instantiateViewController(withIdentifier: "imgLoadViewController") as? ImgProcessingLoadingViewController else{
             print("cannot find view controller")
             return
@@ -96,26 +94,23 @@ class PreviewCameraViewController: UIViewController {
                 case .success(let upload, _, _):
                     upload.responseJSON { response in
                         print("response: ")
-                        print(response)
+                        print(response.description)
                         let responseJSON = response.data
                         let decoder = JSONDecoder()
                         
                         guard let decodedResponse = try? decoder.decode(Img2JSONResponse.self, from: responseJSON!) else{
                             print("error")
+                            let alertPrompt = UIAlertController(title: "Image Processing Timed Out", message: "Please Try Again.",preferredStyle: .alert)
+                            let alert = UIAlertAction( title: "Go Back", style: UIAlertAction.Style.default, handler: { (action) -> Void in
+                                self.navigationController!.popViewController(animated: true)
+                            })
+                            alertPrompt.addAction(alert)
+                            self.present(alertPrompt, animated: true)
+                            
                             return
                         }
                         self.getDataFromServer(DataResponse: decodedResponse)
-//                        do{
-//                            let decodedResponse = try decoder.decode(Img2JSONResponse.self, from: responseJSON!)
-//                        }
-//                        catch let error{
-//
-//                            print(error)
-//                            return
-//                        }
-                        //self.getDataFromServer(DataResponse: decodedResponse.result_id)
-                        //controller.imgData = response.data!
-                        //self.navigationController!.pushViewController(controller, animated: true)
+
                         
                     }
                 case .failure(let encodingError):
@@ -126,7 +121,6 @@ class PreviewCameraViewController: UIViewController {
     
     func getDataFromServer(DataResponse: Img2JSONResponse){
         let loadingView = UIStoryboard(name: "Loading", bundle: Bundle.main)
-        //loadingView.imgData = response.data!
         guard let controller = loadingView.instantiateViewController(withIdentifier: "loadViewController1") as? LoadingViewController else{
             print("cannot find view controller")
             return
@@ -147,8 +141,6 @@ class PreviewCameraViewController: UIViewController {
         _ = sessionManager.getManager().request(url, method:.get, parameters: parameters, encoding: URLEncoding(destination: .methodDependent), headers: headers).responseString { response in
             switch response.result {
             case .success:
-                print("response description: ")
-                //print(response.description)
                 controller.imgData = response.data!
                 controller.expected_tool_count = DataResponse.expected_tool_count
                 controller.result_id = DataResponse.result_id

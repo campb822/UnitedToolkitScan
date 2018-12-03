@@ -49,8 +49,6 @@ class UserLogin: UIViewController, UITextFieldDelegate{
         super.viewWillDisappear(animated)
         // Show the navigation bar on other view controllers
         self.navigationController?.isNavigationBarHidden = false;
-        username.text = ""
-        password.text = ""
     }
     
     //Enables next button within iOS keyboard
@@ -109,7 +107,7 @@ class UserLogin: UIViewController, UITextFieldDelegate{
                         let jsonData = response.data
                         let decoder = JSONDecoder()
                         guard let decodedKey = try? decoder.decode(JSONResponse.self, from: jsonData!) else{
-                            let errorAlert = UIAlertController(title: "ERROR", message: "Failed to login. Invalid credentials.", preferredStyle:.alert)
+                            let errorAlert = UIAlertController(title: "ERROR", message: "Database Communication Error", preferredStyle:.alert)
                             errorAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler:nil))
                             self.present(errorAlert,animated: true)
                             print("error with auth key")
@@ -131,16 +129,11 @@ class UserLogin: UIViewController, UITextFieldDelegate{
                     }
 
                 case .failure(let error):
+                    print("error")
                     print(response.description)
                     print(error)
-                    let communicationErrorAlert = UIAlertController(title: "ERROR", message: "Server Communication Error. Connect to Appropriate Network.", preferredStyle:.alert)
-                    communicationErrorAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler:nil))
-                    self.present(communicationErrorAlert,animated: true)
-                    print("error with communication")
-                    return
                 }
             }
         }
     }
-    
 }

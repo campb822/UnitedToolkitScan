@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8437BED0215EA140000E615F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8437BECE215EA140000E615F /* Main.storyboard */; };
+		841C928D21B4B76C004317E4 /* CheckInCheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841C928821B4B76C004317E4 /* CheckInCheckOut.storyboard */; };
+		841C928E21B4B76C004317E4 /* CheckInCheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C928921B4B76C004317E4 /* CheckInCheckOutViewController.swift */; };
+		841C928F21B4B76C004317E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841C928A21B4B76C004317E4 /* Main.storyboard */; };
+		841C929021B4B76C004317E4 /* UserLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C928C21B4B76C004317E4 /* UserLoginController.swift */; };
 		8437BED5215EA142000E615F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8437BED3215EA142000E615F /* LaunchScreen.storyboard */; };
+		84557B3D21B4B0D300508759 /* UnitedToolkitScanUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 8458D0D021B4805F0021A5FD /* UnitedToolkitScanUITests.xctest */; };
 		84574031219370B700DC98BD /* ImgProcessingLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457402D219370B700DC98BD /* ImgProcessingLoadingViewController.swift */; };
 		84574032219370B700DC98BD /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8457402E219370B700DC98BD /* Loading.storyboard */; };
 		84574033219370B700DC98BD /* ImgProcessingLoading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8457402F219370B700DC98BD /* ImgProcessingLoading.storyboard */; };
@@ -16,6 +20,7 @@
 		84574039219370CD00DC98BD /* PreviewCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84574036219370CD00DC98BD /* PreviewCameraViewController.swift */; };
 		8457403A219370CD00DC98BD /* ToolkitCapture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84574037219370CD00DC98BD /* ToolkitCapture.storyboard */; };
 		8457403B219370CD00DC98BD /* CameraCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84574038219370CD00DC98BD /* CameraCaptureController.swift */; };
+		8458D0DA21B480630021A5FD /* imgProcessingUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458D0CA21B47FF00021A5FD /* imgProcessingUITest.swift */; };
 		84830F79218F8FD000769517 /* ExampleBarcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84830F74218F8FD000769517 /* ExampleBarcode.storyboard */; };
 		84830F7A218F8FD000769517 /* BarcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F75218F8FD000769517 /* BarcodeController.swift */; };
 		84830F7B218F8FD000769517 /* ManualEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F76218F8FD000769517 /* ManualEntryViewController.swift */; };
@@ -23,17 +28,27 @@
 		84830F92218F8FE900769517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F83218F8FE900769517 /* AppDelegate.swift */; };
 		84830F93218F8FE900769517 /* AlamofireSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F84218F8FE900769517 /* AlamofireSessionManager.swift */; };
 		84830F94218F8FE900769517 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F86218F8FE900769517 /* ViewController.swift */; };
-		84830F95218F8FE900769517 /* CheckInCheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84830F87218F8FE900769517 /* CheckInCheckOut.storyboard */; };
-		84830F96218F8FE900769517 /* CheckInCheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F88218F8FE900769517 /* CheckInCheckOutViewController.swift */; };
-		84830F97218F8FE900769517 /* UserLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84830F89218F8FE900769517 /* UserLoginController.swift */; };
 		84A4AE71217A4E66007E9F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A4AE70217A4E66007E9F7E /* Assets.xcassets */; };
 		8BC3C6B2E3BFF1AFC4B96B0C /* Pods_UnitedToolkitScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADB4A0F5BA33217287499CD /* Pods_UnitedToolkitScan.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8458D0D521B4805F0021A5FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8437BEBD215EA140000E615F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8437BEC4215EA140000E615F;
+			remoteInfo = UnitedToolkitScan;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6ADB4A0F5BA33217287499CD /* Pods_UnitedToolkitScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitedToolkitScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		841C928821B4B76C004317E4 /* CheckInCheckOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckInCheckOut.storyboard; sourceTree = "<group>"; };
+		841C928921B4B76C004317E4 /* CheckInCheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInCheckOutViewController.swift; sourceTree = "<group>"; };
+		841C928B21B4B76C004317E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		841C928C21B4B76C004317E4 /* UserLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginController.swift; sourceTree = "<group>"; };
 		8437BEC5215EA140000E615F /* UnitedToolkitScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitedToolkitScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8437BECF215EA140000E615F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8437BED4215EA142000E615F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8437BED6215EA142000E615F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8457402D219370B700DC98BD /* ImgProcessingLoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgProcessingLoadingViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +58,8 @@
 		84574036219370CD00DC98BD /* PreviewCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewCameraViewController.swift; sourceTree = "<group>"; };
 		84574037219370CD00DC98BD /* ToolkitCapture.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ToolkitCapture.storyboard; sourceTree = "<group>"; };
 		84574038219370CD00DC98BD /* CameraCaptureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureController.swift; sourceTree = "<group>"; };
+		8458D0CA21B47FF00021A5FD /* imgProcessingUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imgProcessingUITest.swift; sourceTree = "<group>"; };
+		8458D0D021B4805F0021A5FD /* UnitedToolkitScanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitedToolkitScanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84830F74218F8FD000769517 /* ExampleBarcode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleBarcode.storyboard; sourceTree = "<group>"; };
 		84830F75218F8FD000769517 /* BarcodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeController.swift; sourceTree = "<group>"; };
 		84830F76218F8FD000769517 /* ManualEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualEntryViewController.swift; sourceTree = "<group>"; };
@@ -50,9 +67,6 @@
 		84830F83218F8FE900769517 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84830F84218F8FE900769517 /* AlamofireSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireSessionManager.swift; sourceTree = "<group>"; };
 		84830F86218F8FE900769517 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		84830F87218F8FE900769517 /* CheckInCheckOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckInCheckOut.storyboard; sourceTree = "<group>"; };
-		84830F88218F8FE900769517 /* CheckInCheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInCheckOutViewController.swift; sourceTree = "<group>"; };
-		84830F89218F8FE900769517 /* UserLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginController.swift; sourceTree = "<group>"; };
 		84A4AE70217A4E66007E9F7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84A4AE72217A4E94007E9F7E /* UnitedToolkitScan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnitedToolkitScan.entitlements; sourceTree = "<group>"; };
 		C0BF24F939B42D466A00E5AD /* Pods-UnitedToolkitScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitedToolkitScan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitedToolkitScan/Pods-UnitedToolkitScan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,13 +82,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8458D0CD21B4805F0021A5FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841C928721B4B76C004317E4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				841C928821B4B76C004317E4 /* CheckInCheckOut.storyboard */,
+				841C928921B4B76C004317E4 /* CheckInCheckOutViewController.swift */,
+				841C928A21B4B76C004317E4 /* Main.storyboard */,
+				841C928C21B4B76C004317E4 /* UserLoginController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		8437BEBC215EA140000E615F = {
 			isa = PBXGroup;
 			children = (
 				8437BEC7215EA140000E615F /* UnitedToolkitScan */,
+				8458D0C921B47FC40021A5FD /* UnitedToolkitScanUITests */,
 				8437BEC6215EA140000E615F /* Products */,
 				84402AE1216165C400199E97 /* Frameworks */,
 				D7134746251D093EA131458C /* Pods */,
@@ -85,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				8437BEC5215EA140000E615F /* UnitedToolkitScan.app */,
+				8458D0D021B4805F0021A5FD /* UnitedToolkitScanUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,12 +126,11 @@
 		8437BEC7215EA140000E615F /* UnitedToolkitScan */ = {
 			isa = PBXGroup;
 			children = (
-				84830F85218F8FE900769517 /* Login */,
+				841C928721B4B76C004317E4 /* Login */,
 				84830F73218F8FD000769517 /* Barcode Scan */,
 				84574035219370CD00DC98BD /* Toolkit Capture */,
 				8457402C219370B700DC98BD /* Img Processing */,
 				84830F82218F8FE900769517 /* Support Files */,
-				84A4AE70217A4E66007E9F7E /* Assets.xcassets */,
 				8437BED6215EA142000E615F /* Info.plist */,
 				84A4AE72217A4E94007E9F7E /* UnitedToolkitScan.entitlements */,
 			);
@@ -133,6 +166,14 @@
 			path = "Toolkit Capture";
 			sourceTree = "<group>";
 		};
+		8458D0C921B47FC40021A5FD /* UnitedToolkitScanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8458D0CA21B47FF00021A5FD /* imgProcessingUITest.swift */,
+			);
+			path = UnitedToolkitScanUITests;
+			sourceTree = "<group>";
+		};
 		84830F73218F8FD000769517 /* Barcode Scan */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +188,7 @@
 		84830F82218F8FE900769517 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				84A4AE70217A4E66007E9F7E /* Assets.xcassets */,
 				84830F86218F8FE900769517 /* ViewController.swift */,
 				84830F83218F8FE900769517 /* AppDelegate.swift */,
 				84830F84218F8FE900769517 /* AlamofireSessionManager.swift */,
@@ -154,18 +196,6 @@
 			);
 			name = "Support Files";
 			path = "UnitedToolkitScan/Support Files";
-			sourceTree = SOURCE_ROOT;
-		};
-		84830F85218F8FE900769517 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				84830F89218F8FE900769517 /* UserLoginController.swift */,
-				84830F88218F8FE900769517 /* CheckInCheckOutViewController.swift */,
-				8437BECE215EA140000E615F /* Main.storyboard */,
-				84830F87218F8FE900769517 /* CheckInCheckOut.storyboard */,
-			);
-			name = Login;
-			path = UnitedToolkitScan/Login;
 			sourceTree = SOURCE_ROOT;
 		};
 		D7134746251D093EA131458C /* Pods */ = {
@@ -199,6 +229,24 @@
 			productReference = 8437BEC5215EA140000E615F /* UnitedToolkitScan.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8458D0CF21B4805F0021A5FD /* UnitedToolkitScanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8458D0D721B4805F0021A5FD /* Build configuration list for PBXNativeTarget "UnitedToolkitScanUITests" */;
+			buildPhases = (
+				8458D0CC21B4805F0021A5FD /* Sources */,
+				8458D0CD21B4805F0021A5FD /* Frameworks */,
+				8458D0CE21B4805F0021A5FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8458D0D621B4805F0021A5FD /* PBXTargetDependency */,
+			);
+			name = UnitedToolkitScanUITests;
+			productName = UnitedToolkitScanUITests;
+			productReference = 8458D0D021B4805F0021A5FD /* UnitedToolkitScanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -208,7 +256,7 @@
 				KnownAssetTags = (
 					2,
 				);
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Team United Airlines";
 				TargetAttributes = {
@@ -220,6 +268,10 @@
 								enabled = 0;
 							};
 						};
+					};
+					8458D0CF21B4805F0021A5FD = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 8437BEC4215EA140000E615F;
 					};
 				};
 			};
@@ -237,6 +289,7 @@
 			projectRoot = "";
 			targets = (
 				8437BEC4215EA140000E615F /* UnitedToolkitScan */,
+				8458D0CF21B4805F0021A5FD /* UnitedToolkitScanUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -250,11 +303,19 @@
 				84830F7D218F8FD000769517 /* BarcodeCapture.storyboard in Resources */,
 				84574032219370B700DC98BD /* Loading.storyboard in Resources */,
 				8437BED5215EA142000E615F /* LaunchScreen.storyboard in Resources */,
+				841C928D21B4B76C004317E4 /* CheckInCheckOut.storyboard in Resources */,
 				84A4AE71217A4E66007E9F7E /* Assets.xcassets in Resources */,
+				841C928F21B4B76C004317E4 /* Main.storyboard in Resources */,
 				8457403A219370CD00DC98BD /* ToolkitCapture.storyboard in Resources */,
-				84830F95218F8FE900769517 /* CheckInCheckOut.storyboard in Resources */,
 				84830F79218F8FD000769517 /* ExampleBarcode.storyboard in Resources */,
-				8437BED0215EA140000E615F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8458D0CE21B4805F0021A5FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84557B3D21B4B0D300508759 /* UnitedToolkitScanUITests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,27 +369,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84830F97218F8FE900769517 /* UserLoginController.swift in Sources */,
 				84830F94218F8FE900769517 /* ViewController.swift in Sources */,
 				84830F93218F8FE900769517 /* AlamofireSessionManager.swift in Sources */,
+				841C929021B4B76C004317E4 /* UserLoginController.swift in Sources */,
+				841C928E21B4B76C004317E4 /* CheckInCheckOutViewController.swift in Sources */,
 				84574034219370B700DC98BD /* LoadingViewController.swift in Sources */,
 				84830F92218F8FE900769517 /* AppDelegate.swift in Sources */,
 				84574039219370CD00DC98BD /* PreviewCameraViewController.swift in Sources */,
 				84830F7A218F8FD000769517 /* BarcodeController.swift in Sources */,
 				84574031219370B700DC98BD /* ImgProcessingLoadingViewController.swift in Sources */,
 				8457403B219370CD00DC98BD /* CameraCaptureController.swift in Sources */,
-				84830F96218F8FE900769517 /* CheckInCheckOutViewController.swift in Sources */,
 				84830F7B218F8FD000769517 /* ManualEntryViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8458D0CC21B4805F0021A5FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8458D0DA21B480630021A5FD /* imgProcessingUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8458D0D621B4805F0021A5FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8437BEC4215EA140000E615F /* UnitedToolkitScan */;
+			targetProxy = 8458D0D521B4805F0021A5FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		8437BECE215EA140000E615F /* Main.storyboard */ = {
+		841C928A21B4B76C004317E4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8437BECF215EA140000E615F /* Base */,
+				841C928B21B4B76C004317E4 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -502,6 +579,49 @@
 			};
 			name = Release;
 		};
+		8458D0D821B4805F0021A5FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 946FW7N86Q;
+				INFOPLIST_FILE = UnitedToolkitScanUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.UnitedAirlines.UnitedToolkitScanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UnitedToolkitScan;
+			};
+			name = Debug;
+		};
+		8458D0D921B4805F0021A5FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 946FW7N86Q;
+				INFOPLIST_FILE = UnitedToolkitScanUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.UnitedAirlines.UnitedToolkitScanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UnitedToolkitScan;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -519,6 +639,15 @@
 			buildConfigurations = (
 				8437BEDA215EA142000E615F /* Debug */,
 				8437BEDB215EA142000E615F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8458D0D721B4805F0021A5FD /* Build configuration list for PBXNativeTarget "UnitedToolkitScanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8458D0D821B4805F0021A5FD /* Debug */,
+				8458D0D921B4805F0021A5FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

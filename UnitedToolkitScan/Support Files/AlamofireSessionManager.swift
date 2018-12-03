@@ -31,8 +31,8 @@ class loadSession {
         ]
         
         let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 4 // seconds
-        configuration.timeoutIntervalForResource = 4
+        configuration.timeoutIntervalForRequest = 20 // seconds
+        configuration.timeoutIntervalForResource = 20
         
         self.manager = Alamofire.SessionManager(
             configuration: configuration,
