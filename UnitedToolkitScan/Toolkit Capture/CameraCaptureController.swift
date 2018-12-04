@@ -5,6 +5,7 @@
 //  Created by Team United Airlines on 10/1/18.
 //  Copyright © 2018 Team United Airlines. All rights reserved.
 //
+//  View to allow user to capture toolkit. Pushes image to PreviewCameraViewController for submission to server for OpenCV processing
 
 import AVFoundation
 import UIKit

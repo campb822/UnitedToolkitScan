@@ -5,6 +5,9 @@
 //  Created by Team United Airlines on 10/1/18.
 //  Copyright © 2018 Team United Airlines. All rights reserved.
 //
+//  Barcode scanner to capture associated code with toolkit. Sends to server for confirmation that toolkit exists in system
+//  Will not allow user to continue if kit does not exist in admin portal.
+//  Manual entry option will push a new vc for user to input and serve same functionality.
 
 import UIKit
 import AVFoundation

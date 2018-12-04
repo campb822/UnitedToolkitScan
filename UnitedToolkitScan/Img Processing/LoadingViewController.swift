@@ -5,6 +5,7 @@
 //  Created by Team United Airlines on 10/18/18.
 //  Copyright © 2018 Team United Airlines. All rights reserved.
 //
+//  Post-processing screen where toolkit cv data is displayed. User may scan toolkit again or scan a new toolkit.
 
 import UIKit
 import AVFoundation
@@ -12,13 +13,6 @@ import AVFoundation
 class LoadingViewController: UIViewController {
 
     @IBAction func ScanNewToolkitButton(_ sender: UIButton) {
-//        let checkInCheckOutView = UIStoryboard(name: "CheckInCheckOut", bundle: Bundle.main)
-//        guard let controller = checkInCheckOutView.instantiateViewController(withIdentifier: "CheckInCheckOutStoryboard") as? CheckInCheckOutViewController else{
-//            print("cannot find view controller")
-//            return
-//        }
-//
-        //Pop to checkInCheckOutViewController
         self.navigationController!.popToViewController(navigationController!.viewControllers[1], animated: true)
     }
     

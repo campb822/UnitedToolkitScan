@@ -5,6 +5,7 @@
 //  Created by Team United Airlines on 10/15/18.
 //  Copyright © 2018 Team United Airlines. All rights reserved.
 //
+//  View for user to check in or check out toolkit. Flag passed to database when submitting captured toolkit image.
 
 import UIKit
 import Alamofire

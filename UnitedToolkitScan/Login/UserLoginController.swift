@@ -5,6 +5,8 @@
 //  Created by Team United Airlines on 9/30/18.
 //  Copyright © 2018 Team United Airlines. All rights reserved.
 //
+//  The first view after the splash screen where an authorized user signs into the system to chekc in or check out toolkits.
+//  
 
 import Foundation
 import UIKit
@@ -95,15 +97,14 @@ class UserLogin: UIViewController, UITextFieldDelegate{
                     print(response.description)
                     if(response.description == "SUCCESS: Get outta here")
                     {
-                        let loginAlert = UIAlertController(title: "User Not Found", message: "User not found in system. Contact System Administrator.", preferredStyle: .alert)
-                        
+                        //If user does not exist in system, alert to indicate they need to contact admin.
+                        let loginAlert = UIAlertController(title: "User Not Found", message: "User not found in system. Contact administrator for access.", preferredStyle: .alert)
                         loginAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-                        
-                        
                         self.present(loginAlert, animated: true)
-                        print("you cannot login")
                     }
                     else{
+                        
+                        //parse json response and indicate a db error if unable to parse
                         let jsonData = response.data
                         let decoder = JSONDecoder()
                         guard let decodedKey = try? decoder.decode(JSONResponse.self, from: jsonData!) else{
@@ -113,11 +114,11 @@ class UserLogin: UIViewController, UITextFieldDelegate{
                             print("error with auth key")
                             return
                         }
-                        
+                        //keychain saved from db
                         let keychain = Keychain(service: "com.UnitedAirlinesCapstone.UnitedToolkitScan")
                         keychain["auth_token"] = decodedKey.auth_token
                         
-                        
+                        //push check in/check out storyboard if json parsed correctly
                         let storyboard = UIStoryboard(name: "CheckInCheckOut", bundle: Bundle.main)
                         guard let controller = storyboard.instantiateViewController(withIdentifier: "CheckInCheckOutStoryboard") as? CheckInCheckOutViewController else{
                             print("cannot find view controller")

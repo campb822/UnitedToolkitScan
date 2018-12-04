@@ -5,6 +5,7 @@
 //  Created by Team United Airlines on 11/1/18.
 //  Copyright © 2018 Team United Airlines. All rights reserved.
 //
+//  Session manager to handle the ssl cert. Called each time a network request is made.
 
 import Foundation
 import UIKit

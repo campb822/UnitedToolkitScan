@@ -5,6 +5,7 @@
 //  Created by Scott Campbell on 10/10/18.
 //  Copyright © 2018 Team United Airlines. All rights reserved.
 //
+//  Captured image sent to server. First response is process ID and second request uses process ID to capture barcode, tool count, toolkit name, toolkit barcode.
 
 import UIKit
 import Alamofire

@@ -5,6 +5,7 @@
 //  Created by Team United Airlines on 10/19/18.
 //  Copyright © 2018 Team United Airlines. All rights reserved.
 //
+// Loading screen while image processing occurs.
 
 import UIKit
 

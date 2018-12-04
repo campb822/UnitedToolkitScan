@@ -5,6 +5,7 @@
 //  Created by Team United Airlines on 10/18/18.
 //  Copyright © 2018 Team United Airlines. All rights reserved.
 //
+//  Manual entry serves similar purpose as barcodecontroller but has a user input the barcode instead of scanning.
 
 import UIKit
 import KeychainAccess
@@ -64,6 +65,7 @@ class ManualEntryViewController: UIViewController {
                     let cancel = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:nil)
                     alert.addAction(cancel)
                     
+                    //different alert popup for iPads
                     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad )
                     {
                         if let currentPopoverpresentioncontroller = alert.popoverPresentationController{
